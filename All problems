@@ -2,7 +2,7 @@
 Q1)A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
 
 Answer:Loop 1: swapIndex1 => To find out break point from end of the array nums[i]>nums[i-1].  ::   if(nums[i]>nums[i-1]) => swapIndex1 = i-1.  
-       Loop 2: swapIndex2 => To find out sightly greater number than nums[swapIndex1].         ::   nums[i]>nums[swapIndex1]
+       Loop 2: swapIndex2 => To find out sightly greater number than nums[swapIndex1] on right side of breakpoint         ::   nums[i]>nums[swapIndex1]
        If there is no break point return reversed array as output no swapping required         ::   swapIndex1 == 0 && swapIndex2 == 0
        Else Swap numbers on SwapIndex1 and SwapIndex2  and reverse array from breakpoint       ::   Swap(nums,swapIndex1,swapIndex2)  reverse(nums,swapIndex1+1,nums.length-1)
        
