@@ -1,5 +1,9 @@
+Q1) Set Matrix Zeroes : Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
 
-Q1)A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
+Answer:Loop 1: Iterate on array and copy index in hashmap if matrix[i][j] == 0
+       Loop 2: Iterate on array if hashmap has i or j set element equal to 0
+
+Q1) Next Permutation : A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
 
 Answer:Loop 1: swapIndex1 => To find out break point from end of the array nums[i]>nums[i-1].  ::   if(nums[i]>nums[i-1]) => swapIndex1 = i-1.  
        Loop 2: swapIndex2 => To find out sightly greater number than nums[swapIndex1] on right side of breakpoint         ::   nums[i]>nums[swapIndex1]
