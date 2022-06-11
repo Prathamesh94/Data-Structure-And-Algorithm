@@ -24,5 +24,43 @@ Q4) Rotate Matrix : You are given an n x n 2D matrix representing an image, rota
 
 Answer: Loop1: Transver Matrix rows replace columns ,columns replace rows
         Loop2: Reverse Matrix
+
+Q5) Merge Sorted Array :You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
         
+Answer:
+function swap(arr,arr1,i){
+    let temp =arr[i]
+    arr[i] = arr1[0]
+    arr1[0] = temp 
+    return arr,arr1
+    
+}
+var merge = function(nums1, m, nums2, n) {
+
+    console.log(nums1,nums2)
+    while(nums1.length >m){
+            nums1.pop()
+            
+        }
+    while(nums2.length >n){
+            nums2.pop()
+            
+        }
+    for(let i=0;i<nums1.length;i++){
+       //
+        if(nums1[i] > nums2[0]){
+            nums1,nums2 = swap(nums1,nums2,i)
+            nums2.sort(function(a,b){return a-b})
+        }
+    }
+    console.log(nums1,nums2)
+     for(let i=0;i<n;i++){
+        
+            nums1.push(nums2[i])
+         
+     }
+    
+};
      
