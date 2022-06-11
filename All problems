@@ -25,7 +25,7 @@ Q4) Rotate Matrix : You are given an n x n 2D matrix representing an image, rota
 Answer: Loop1: Transver Matrix rows replace columns ,columns replace rows
         Loop2: Reverse Matrix
 
-Q5) Merge Sorted Array :You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+Q5)* Merge Sorted Array :You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 
 Merge nums1 and nums2 into a single array sorted in non-decreasing order.
         
@@ -63,4 +63,17 @@ var merge = function(nums1, m, nums2, n) {
      }
     
 };
+
+Q6)* Find the Duplicate Number:Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+
+There is only one repeated number in nums, return this repeated number.
+
+You must solve the problem without modifying the array nums and uses only constant extra space.
+
+Answer:
+Solve using hashmap
+
+Q7)
+
+
      
