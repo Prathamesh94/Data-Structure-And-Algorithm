@@ -1,26 +1,148 @@
+Q1) Set Matrix Zeroes 
+
+
 Q1) Set Matrix Zeroes : Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
 
 Answer:Loop 1: Iterate on array and copy index in hashmap if matrix[i][j] == 0
        Loop 2: Iterate on array if hashmap has i or j set element equal to 0
+       
+Code :
+       var setZeroes = function(matrix) {
+    
+    let hashmap1 = {}
+    let hashmap2 = {}
+    
+    for (let i =0 ;i<matrix.length;i++){
+        for (let j =0 ;j<matrix[i].length;j++){
+            if(matrix[i][j] == 0){
+                hashmap1[i] = 'true'
+                hashmap2[j] = 'true'   
+            }
+        
+    }
+    }
+    for (let i =0 ;i<matrix.length;i++){
+        for (let j =0 ;j<matrix[i].length;j++){
+            if(hashmap1.hasOwnProperty(i) || hashmap2.hasOwnProperty(j)){
+                matrix[i][j] = 0
+            }
+        
+    }
+    }
+    return matrix
+    
+};
+       
+       
+===========================================================================================================================================================
+
+Q2)Pascal's Triangle : Given an integer numRows, return the first numRows of Pascal's triangle.
+
+Answer:
+Input: numRows = 5
+Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+Code:
+var generate = function(numRows) {
+    let pascalT = []
+    for(let i=0;i<numRows;i++){
+        pascalT.push([])
+        for(let j=0;j<i+1;j++){
+            if(i<2 || j ==0 || j==i){
+               pascalT[i].push(1)
+               }else{
+                   pascalT[i].push(pascalT[i-1][j-1]+pascalT[i-1][j])
+               }
+            
+        
+    }
+    }
+    return pascalT
+    
+};
        
        
 ===========================================================================================================================================================
 
 
 
-Q2) Next Permutation : A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
+Q3) Next Permutation : A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
 
 Answer:Loop 1: swapIndex1 => To find out break point from end of the array nums[i]>nums[i-1].  ::   if(nums[i]>nums[i-1]) => swapIndex1 = i-1.  
        Loop 2: swapIndex2 => To find out sightly greater number than nums[swapIndex1] on right side of breakpoint         ::   nums[i]>nums[swapIndex1]
        If there is no break point return reversed array as output no swapping required         ::   swapIndex1 == 0 && swapIndex2 == 0
        Else Swap numbers on SwapIndex1 and SwapIndex2  and reverse array from breakpoint       ::   Swap(nums,swapIndex1,swapIndex2)  reverse(nums,swapIndex1+1,nums.length-1)
 
+Code:
+   var nextPermutation = function(nums) {
+    let swapIndex1 = 0
+    let swapIndex2 = 0
+    for (let i = nums.length; i >= 0; i--) {
+        if (nums[i] > nums[i - 1]) {
+            swapIndex1 = i - 1
+            break
+        }
+    }
+    for (let i = swapIndex1 + 1; i < nums.length; i++) {
+        if (nums[swapIndex1] < nums[i]) {
+            if (swapIndex2 == 0) {
+                swapIndex2 = i
+            }
+            if (nums[swapIndex2] >= nums[i]) {
+                swapIndex2 = i
+            }
+        }
+    }
+    //console.log(nums,swapIndex1,swapIndex2)
+    if (swapIndex1 != 0 || swapIndex2 != 0) {
+        nums = swap(nums, swapIndex1, swapIndex2)
+        if (nums.length - 1 - swapIndex1 > 2) {
+            nums = reverse(nums, swapIndex1 + 1, nums.length - 1)
+            console.log(nums, swapIndex1)
+        } else {
+            if (nums[swapIndex1 + 1] > nums[swapIndex1 + 2]) {
+                nums = swap(nums, swapIndex1 + 1, swapIndex1 + 2)
+            }
+        }
 
-===========================================================================================================================================================
+    } else {
+        nums = reverse1(nums, swapIndex1, nums.length - 1)
+    }
+    return nums
+};
+
+
+
+=====================================================================================================================================================
+Q4)Kadane’s Algorithm : Maximum Subarray Sum in an Array
+Problem Statement: Given an integer array arr, find the contiguous subarray (containing at least one number) which
+has the largest sum and return its sum and print the subarray.
+
+Code:
+var maxSubArray = function(nums) {
+    let sum = nums[0]
+    let max = nums[0]
+    if (nums.length == 1) {
+        return sum
+    }
+    for (let i = 1; i < nums.length; i++) {
+        if (sum < 0) {
+            sum = 0
+        }
+        sum = sum + nums[i]
+        if (max < sum) {
+            max = sum
+        }
+    }
+    return max
+
+};
+
+
+=====================================================================================================================================================
 
        
-Q3)Sort an array of 0’s 1’s 2’s
- 
+Q5)Sort an array of 0’s 1’s 2’s
+ Intuition: In this approach, we will be using 3 pointers named low, mid, and high. We will be using these 3 pointers to move around the values. The primary goal here is to move 0s to the left and 2s to the right of the array and at the same time all the 1s shall be in the middle region of the array and hence the array will be sorted. 
  Answer: Initiate low mid with zero and high with n-1
          Switch case 0) nums = swap(nums,mid,low);
                         low = low +1;
@@ -32,22 +154,79 @@ Q3)Sort an array of 0’s 1’s 2’s
                         
 
 ===========================================================================================================================================================
+Q6) Stock Buy And Sell : You are given an array of prices where prices[i] is the price of a given stock on an ith day.
 
-    
-                     
-Q4) Rotate Matrix : You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+    var maxProfit = function(prices) {
+    let maxProfit = 0
+    let profit = 0
+    for(let i=0;i<prices.length-1;i++){
+            profit = profit + prices[i+1]-prices[i]
+            if(profit > maxProfit){
+                maxProfit = profit                
+            }
+        if(profit < 0){
+            profit = 0
+        }
+    }
+    return maxProfit  
+};
+                        
+                        
+
+===========================================================================================================================================================
+
+                       
+Q7) Rotate Matrix : You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
 
 Answer: Loop1: Transver Matrix rows replace columns ,columns replace rows
         Loop2: Reverse Matrix
         
-        
-        
+Code:
+function transverseSwap(matrix,i,j){
+    //console.log(matrix,i,j)
+    let temp = matrix[i][j]
+    matrix[i][j] = matrix[j][i]
+    matrix[j][i] = temp
+    //console.log(matrix)
+    return matrix
+}
 
+function swap(arr,i,j){
+    let temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
+    return arr
+    
+}
+
+function reverse(arr,i,j){
+    while(i<j){
+        swap(arr,i,j)
+        i +=1
+        j -=1
+    }
+    return arr
+}
+var rotate = function(matrix) {
+    
+    for(let i=0;i<matrix.length;i++){
+        for(let j=0;j<i;j++){
+           matrix = transverseSwap(matrix,i,j)
+        
+    }   
+    }
+    for(let i=0;i<matrix.length;i++){
+        matrix[i] = reverse(matrix[i],0,matrix[i].length-1)
+    }
+    
+    return matrix
+};
+        
 ===========================================================================================================================================================
 
     
 
-Q5)* Merge Sorted Array :You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+Q8)* Merge Sorted Array :You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 
 Merge nums1 and nums2 into a single array sorted in non-decreasing order.
         
