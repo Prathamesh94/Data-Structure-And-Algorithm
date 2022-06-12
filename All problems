@@ -226,24 +226,46 @@ var rotate = function(matrix) {
 
     
 
-Q8)* Merge Sorted Array :You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+Q8)Merge Overlapping Sub-intervals : Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
-Merge nums1 and nums2 into a single array sorted in non-decreasing order.
-        
-Answer:
-function swap(arr,arr1,i){
-    let temp =arr[i]
-    arr[i] = arr1[0]
-    arr1[0] = temp 
-    return arr,arr1
-    
-}
-var merge = function(nums1, m, nums2, n) {
+Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+Output: [[1,6],[8,10],[15,18]]
+Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
 
-    console.log(nums1,nums2)
+Code:
+var merge = function(intervals) {
+    let i = 0
+    intervals.sort(function(a, b) {
+        return a[0] - b[0]
+    })
+    let intervalsout = [intervals[0]]
+    if (intervals.length == 1) {
+        return intervals
+    }
+    while (i < intervals.length) {
+        if (intervalsout[intervalsout.length - 1][1] >= intervals[i][0]) {
+            if (intervalsout[intervalsout.length - 1][1] <= intervals[i][1]) {
+                intervalsout[intervalsout.length - 1][1] = intervals[i][1]
+            }
+        } else {
+            intervalsout.push(intervals[i])
+
+        }
+        i += 1
+    }
+    return intervalsout
+};
+
+
+
+===========================================================================================================================================================
+
+
+ Q9)Merge two Sorted Arrays Without Extra Space : Problem statement: Given two sorted arrays arr1[] and arr2[] of sizes n and m in non-decreasing order. Merge them in sorted order. Modify arr1 so that it contains the first N elements and modify arr2 so that it contains the last M elements.
+ 
+ var merge = function(nums1, m, nums2, n) {
     while(nums1.length >m){
-            nums1.pop()
-            
+            nums1.pop()  
         }
     while(nums2.length >n){
             nums2.pop()
@@ -256,71 +278,531 @@ var merge = function(nums1, m, nums2, n) {
             nums2.sort(function(a,b){return a-b})
         }
     }
-    console.log(nums1,nums2)
      for(let i=0;i<n;i++){
-        
             nums1.push(nums2[i])
-         
      }
-    
 };
-
-
 
 
 ===========================================================================================================================================================
 
     
 
-Q6)* Find the Duplicate Number:Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+Q10) Find the Duplicate Number:Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
 
 There is only one repeated number in nums, return this repeated number.
-
 You must solve the problem without modifying the array nums and uses only constant extra space.
 
 Answer:
 Solve using hashmap
 
+===========================================================================================================================================================
 
+Q11) Repeat and Missing Number Array : You are given a read only array of n integers from 1 to n.
+Each integer appears exactly once except A which appears twice and B which is missing.
+Return A and B.
+Code:
+
+repeatedNumber: function(A) {
+    let output = []
+    let hashmap = {}
+    for (let i = 0; i < A.length; i++) {
+        if (hashmap.hasOwnProperty(A[i])) {
+            output.push(A[i])
+        }
+        hashmap[A[i]] = i
+    }
+    for (let i = 1; i <= A.length; i++) {
+        if (!hashmap.hasOwnProperty(i)) {
+            output.push(i)
+            break;
+        }
+
+    }
+    return output
+}
 
 
 ===========================================================================================================================================================
 
+Q12)Count inversions in an array : Given an array of N integers, count the inversion of the array (using merge-sort).
+
+What is an inversion of an array? Definition: for all i & j < size of array, if i < j then you have to find pair (A[i],A[j]) such that A[j] < A[i].
     
 
-Q7)Merge Intervals:Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
-var merge = function(intervals) {
-    let i =0 
-    intervals.sort(function(a,b){return a[0] - b[0]})
-    let intervalsout = [intervals[0]]
-    if(intervals.length == 1){
-        return intervals
+===========================================================================================================================================================
+
+
+Q13)Search in a sorted 2D matrix : Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties:
+
+Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.
+
+
+Code:
+var searchMatrix = function(matrix, target) {
+    if (matrix.length ==1 && matrix[0].length ==1 && matrix[0][0] == target){
+        return true
     }
-    while(i < intervals.length){
-        if(intervalsout[intervalsout.length-1][1] >=intervals[i][0]){
-            if(intervalsout[intervalsout.length-1][1] <= intervals[i][1] ){
-                  // console.log(intervalsout[intervalsout.length-1][1],intervals[i][1]) 
-                intervalsout[intervalsout.length-1][1] = intervals[i][1]
-            }
-            
-        }else{
-            intervalsout.push(intervals[i])
-            
-        }
-          i += 1
-          }
+    for(let i=0;i<matrix.length;i++){
+        if(matrix[i][matrix[i].length-1] >= target){
+           let low =0
+           let high =matrix[i].length-1
+           let mid = Math.floor((high-low)/2)
+           console.log(mid,high,low)
+           while(low <= high){
+               mid =low+ Math.floor((high-low)/2)
+               if(target == matrix[i][mid]){ //mid % matrix[0].size()
+                  return true
+                  }
+               else if(target > matrix[i][mid]){
+                  low = low + 1
+                   
+                  
+                  }
+               else {
+                   high = high - 1 
+               }
+              
+               console.log(mid,high,low)
+                 
+                 }
+           }
+    }
+    return false
     
-    return intervalsout
+};
+    
+    
+    
+
+===========================================================================================================================================================
+
+
+
+Q14)Pow(x, n) : Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
+Example 1:
+
+Input: x = 2.00000, n = 10
+Output: 1024.00000
+
+Code:
+
+var myPow = function(x, n) {
+    let output =x
+    if(Math.abs(n) > 0 && Math.abs(x) != 1){
+        for(let i=1;i<Math.abs(n);i++){
+        output = output*x
+    }
+        
+    }else if(Math.abs(n)  == 0){
+        output =1
+             
+             }
+    
+    if(x == -1 && n%2 == 0){
+        output = 1
+    }else if(x == -1 && n%2 != 0){
+         output = -1
+    }
+    if(n>= 0){
+        return output
+    }else{
+        return 1/output
+        
+    }
+    
+};
+
+
+
+    
+===========================================================================================================================================================
+
+
+
+Q15) Majority Element : Given an array nums of size n, return the majority element.
+
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+
+Answer:
+Intuition: The question clearly states that the nums array has a majority element. Since it has a majority element we can say definitely the count is more than N/2.
+
+Code:
+var majorityElement = function(nums) {
+    let count = 0
+    let candidate = 0
+    for(let i=0;i<nums.length;i++){
+        if(count == 0){
+            candidate = nums[i]
+           }
+        
+        if(nums[i] == candidate){
+            count += 1
+        }else{
+            count -= 1
+        }
+    }
+    return candidate
+    
+    
+};
+
+
+
+
+    
+===========================================================================================================================================================
+
+
+Q16)Majority Element II : Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+
+Answer:
+Approach + Intuition: In our code, we start with declaring a few variables:
+
+num1 and num2 will store our currently most frequent and second most frequent element.
+c1 and c2 will store their frequency relatively to other numbers.
+We are sure that there will be a max of 2 elements which occurs > N/3 times because there cannot be if you do a simple math addition.
+
+Code:
+var majorityElement = function(nums) {
+    let count1 = 0
+    let count2 = 0
+    let candidate1 = -1
+    let candidate2 = -1
+    let candidates = []
+   // console.log(candidate1,candidate2,count1,count2)
+    for(let i=0;i<nums.length;i++){
+        console.log(candidate1,candidate2,count1,count2)
+        if (nums[i] == candidate1){
+            count1 += 1
+        }else if (nums[i] == candidate2){
+            count2 += 1
+        } else if(count1 == 0){
+            candidate1 = nums[i]
+            count1 = 1
+           } else if(count2 == 0){
+            candidate2 = nums[i]
+             count2 = 1
+           } else{
+               console.log('hellow')
+               count1 -= 1
+               count2 -= 1
+           }
+        console.log(candidate1,candidate2,count1,count2)
+    }
+        
+        count1= 0
+    count2 =0
+    console.log(candidate1,candidate2,count1,count2)
+    for(let i=0;i<nums.length;i++){
+        if (nums[i] == candidate1){
+            count1 += 1
+        }else if (nums[i] == candidate2){
+            count2 += 1
+        }
+    }
+        console.log(count1,count2,nums.length/3)
+        if(count1 > nums.length/3){
+            candidates.push(candidate1)
+        }
+        if(count2 >nums.length/3){
+            candidates.push(candidate2)
+        }
+    return candidates
+    
+    
+};
+
+
+    
+===========================================================================================================================================================
+
+
+
+Q17)Grid Unique Paths : There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
+
+Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.
+
+The test cases are generated so that the answer will be less than or equal to 2 * 109.
+
+
+Code:
+
+function possiblePath(i,j,m,n,hashmap){
+    if(!hashmap.hasOwnProperty(i)){
+        hashmap[i] = {}
+    }
+   // console.log(hashmap)
+    if(i == m-1 && j == n-1){
+        return 1
+       }
+    if(i>=m || j>=n){
+        return 0
+        }else if(hashmap.hasOwnProperty(i) && hashmap[i].hasOwnProperty(j)){
+            return hashmap[i][j]
+        }
+        else{
+            return hashmap[i][j] = possiblePath(i+1,j,m,n,hashmap) + possiblePath(i,j+1,m,n,hashmap)
+        }
+    
+    
+}
+var uniquePaths = function(m, n) {
+    
+    /*let hashmap = {}
+    return possiblePath(0,0,m,n,hashmap)*/
+    let N = m+n-2
+    let r = m-1
+    let res =1
+    
+    for(let i=1;i<=r;i++){
+        
+        res =res*((N-r+i)/i)
+    }
+    return res
 };
 
 
 
 
 
+    
 ===========================================================================================================================================================
 
+
+
+Q18)Reverse Pairs : Given an integer array nums, return the number of reverse pairs in the array.
+
+A reverse pair is a pair (i, j) where 0 <= i < j < nums.length and nums[i] > 2 * nums[j].
+
+Code:
+
+
     
+===========================================================================================================================================================
+
+
+
+
+Q19)2-Sum-Problem : Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+Code:
+
+var twoSum = function(nums, target) {
+    let hashmap ={}
+    for(let i=0;i<nums.length;i++){
+        if(hashmap.hasOwnProperty(target-nums[i])){
+            return [hashmap[target-nums[i]],i]
+        } else{
+            hashmap[nums[i]] = i
+        }
+    }
+    
+};
+
+
+
+    
+===========================================================================================================================================================
+
+
+Q20)4Sum : Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:
+
+0 <= a, b, c, d < n
+a, b, c, and d are distinct.
+nums[a] + nums[b] + nums[c] + nums[d] == target
+You may return the answer in any order.
+
+Intuition: In the previous approach we fixed three-pointers and did a binary search to find the fourth. Over here we will fix two-pointers and then find the remaining two elements using two pointer technique as the array will be sorted at first.
+
+Approach: Sort the array, and then fix two pointers, so the remaining sum will be (target – (nums[i] + nums[j])). Now we can fix two pointers, one front, and another back, and easily use a two-pointer to find the remaining two numbers of the quad. In order to avoid duplications, we jump the duplicates, because taking duplicates will result in repeating quads. We can easily jump duplicates, by skipping the same elements by running a loop.
+
+Code:
+
+var fourSum = function(nums, target) {
+    
+    nums.sort(function(a,b){return a-b})
+    //console.log(nums)
+    let quadruplets = []
+    let hashmap = {}
+    for(let i=0;i<nums.length;i++){
+        for(let j=i+1;j<nums.length;j++){
+            let twosum = target-nums[j]-nums[i]
+            let low = j+1
+            let high = nums.length-1
+            while(low<high){
+                let sum = nums[low] + nums[high]
+                if (sum > twosum) {
+                    high = high-1
+                    }
+                else if (sum < twosum){
+                    low =low +1         
+                } else {
+                    let string = `${nums[i]},${nums[j]},${nums[low]},${nums[high]}`
+                    /*if(!hashmap.hasOwnProperty(string)){
+                        quadruplets.push([nums[i],nums[j],nums[low],nums[high]])
+                        hashmap[string] = "true"
+                    }*/
+                    let quad = [nums[i],nums[j],nums[low],nums[high]]
+                    quadruplets.push(quad)
+                   while(low < high && quad[2] == nums[low]) { low += 1 }
+                    while(low<high && quad[3] == nums[high]){ high -= 1 } 
+                }
+            }
+           while(j + 1 < nums.length && nums[j + 1] == nums[j]) ++j;
+            
+        }
+        while(i + 1 < nums.length && nums[i + 1] == nums[i]) ++i;
+        
+    } 
+    return quadruplets
+   
+    
+};
+
+
+
+
+    
+===========================================================================================================================================================
+
+
+    
+    
+  Q21)Longest Consecutive Sequence : Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+
+You must write an algorithm that runs in O(n) time.
+
+var longestConsecutive = function(nums) {
+    
+        const sortedNums = [...new Set(nums.sort((a, b) => a - b))]
+    const sortedNumsLen = sortedNums.length
+    let ctr = 0
+    const cont = []
+    
+    if (sortedNumsLen === 0) {
+        return sortedNumsLen
+    }
+
+    for (let i = 1; i < sortedNumsLen; i++) {
+    	if ((sortedNums[i] - sortedNums[i - 1]) === 1) {
+      	ctr++
+      } else {
+      	cont.push(ctr + 1)
+        ctr = 0
+      }
+    }
+
+    return Math.max(...cont, ctr + 1)
+    
+};
+
+
+
+    
+===========================================================================================================================================================
+
+
+   
+
+Q22) Largest Subarray with 0 sum : Given an array having both positive and negative integers. The task is to compute the length of the largest subarray with sum 0.
+
+Code:
+maxLen(arr, n) {
+    //code here
+    let hashmap = {}
+    let sum = 0
+    let max = 0
+    for (let i = 0; i < n; i++) {
+        sum = sum + arr[i]
+        //console.log(hashmap)
+        if (sum == 0) {
+            max = i + 1
+        } else {
+            if (hashmap.hasOwnProperty(sum)) {
+                if (max < i - hashmap[sum]) {
+
+                    max = i - hashmap[sum]
+                }
+            } else {
+                hashmap[sum] = i
+            }
+        }
+    }
+    return max
+}
+
+
+
+
+    
+===========================================================================================================================================================
+
+Q23)Count number of subarrays with given Xor K : Given an array of integers A and an integer B.
+
+Find the total number of subarrays having bitwise XOR of all elements equals to B.
+
+Code: 
+
+solve: function(A, B) {
+    let prefix = {}
+    let xor = 0
+    let count = 0
+    for (let i = 0; i < A.length; i++) {
+        xor = xor ^ A[i]
+        if (xor == B) {
+            count += 1
+        }
+        if (prefix.hasOwnProperty(xor ^ B)) {
+            count += prefix[xor ^ B]
+        }
+        if (prefix.hasOwnProperty(xor)) {
+
+            prefix[xor] = prefix[xor] + 1
+        } else {
+            prefix[xor] = 1
+        }
+    }
+    return count
+}   
+   
+   
+
+
+    
+===========================================================================================================================================================
+Q24)Longest Substring Without Repeating Characters : Given a string s, find the length of the longest substring without repeating characters.
+
+
+
+   
+   
+   
+   
+
+
+    
+===========================================================================================================================================================
+
+
+   
+   
+   
+
+
+    
+===========================================================================================================================================================
+
+
+   
+
+
     
     
     
