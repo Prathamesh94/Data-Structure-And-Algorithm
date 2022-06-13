@@ -67,6 +67,18 @@ var generate = function(numRows) {
 
 Q3) Next Permutation : A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
 
+If such an arrangement is not possible, it must rearrange it as the lowest possible order (i.e., sorted in ascending order).
+
+Example 1 :
+
+Input format: Arr[] = {1,3,2}
+
+Output: Arr[] = {2,1,3}
+
+Explanation: All permutations of {1,2,3} are {{1,2,3} , {1,3,2}, {2,13} , {2,3,1} , {3,1,2} , {3,2,1}}. So, the next permutation just after {1,3,2} is {2,1,3}.
+
+
+
 Answer:Loop 1: swapIndex1 => To find out break point from end of the array nums[i]>nums[i-1].  ::   if(nums[i]>nums[i-1]) => swapIndex1 = i-1.  
        Loop 2: swapIndex2 => To find out sightly greater number than nums[swapIndex1] on right side of breakpoint         ::   nums[i]>nums[swapIndex1]
        If there is no break point return reversed array as output no swapping required         ::   swapIndex1 == 0 && swapIndex2 == 0
