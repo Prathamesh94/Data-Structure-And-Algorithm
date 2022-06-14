@@ -1054,4 +1054,35 @@ var isPalindrome = function(head) {
     
     
     
+ Find the starting point of the Loop of LinkedList : Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to (0-indexed). It is -1 if there is no cycle. Note that pos is not passed as a parameter.
+
+Do not modify the linked list.
+
+Answer:
+"To summarize, we move FastPointer twice as fast as SlowPointer. When SlowPointer enters the loop, after k nodes, FastPointer is k nodes into the loop. This means that FastPointer and SlowPointer are LOOP_SIZE - k nodes away from each other.
+Next, if FastPointer moves two nodes for each node that SlowPointer moves, they move one node closer to each other on each turn. Therefore, they will meet after LOOP_SIZE - k turns. Both will be k nodes from the front of the loop.
+The head of the linked list is also k nodes from the front of the loop. So, if we keep one pointer where it is, and move the other pointer to the head of the linked list. then they will meet at the front of the loop."
+    
+    
      
+ Code:
+ 
+ var detectCycle = function(head) {
+    let slow = head;
+    let fast = head;
+    while (slow && fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+        
+        if (slow === fast) {
+            while (head !== fast) {
+                head = head.next;
+                fast = fast.next;
+            }
+            return head;
+        }
+    }
+    return null;
+};
