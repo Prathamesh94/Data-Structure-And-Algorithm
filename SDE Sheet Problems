@@ -965,6 +965,92 @@ var deleteNode = function(node) {
 };
 
 
+
+
+
+
+
+    
+===========================================================================================================================================================
+
+
+
+
+
+
+
+
+
+    
+===========================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+    
+===========================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+    
+===========================================================================================================================================================
+
+Palindrome Linked List : Given the head of a singly linked list, return true if it is a palindrome.
+
+Answer:
+
+1) Slow fast to find middle
+2) reverse linked list
+3) compare slow and head string
+
+
+var isPalindrome = function(head) {
+    
+   function findMiddle(fast, slow) {
+        if(!fast || !fast.next) return slow;
+        return findMiddle(fast.next.next, slow.next);
+    }
+    
+    function reverse(node, prev) {
+        if(!node) return prev;
+        const next = node.next;
+        node.next = prev;
+        return reverse(next, node);
+    }
+    
+    const mid = findMiddle(head, head);
+    const revMid = reverse(mid, null);
+    
+    function traverse(n1, n2) {
+        if(!n1 || !n2) return true;
+        if(n1.val !== n2.val) return false;
+        return traverse(n1.next, n2.next);
+    }
+    return traverse(head, revMid);
+};
+
+
+
+
+
+
+    
+===========================================================================================================================================================
+
     
     
     
