@@ -1110,3 +1110,139 @@ The head of the linked list is also k nodes from the front of the loop. So, if w
     }
     return null;
 };
+
+
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+Q41)    Minimum number of platforms required for a railway : Lamp
+This problem is part of GFG SDE Sheet. Click here to view more.   
+Given arrival and departure times of all trains that reach a railway station. Find the minimum number of platforms required for the railway station so that no train is kept waiting.
+Consider that all the trains arrive on the same day and leave on the same day. Arrival and departure time can never be the same for a train but we can have arrival time of one train equal to departure time of the other. At any given instance of time, same platform can not be used for both departure of a train and arrival of another train. In such cases, we need different platforms.
+
+Answer:
+
+Increase count if train arrives and decrease it if it leaves and check max for miniPlatforms
+Sort arrays to update arrrival and depature in order
+
+Code:
+findPlatform(arr, dep, n)
+    {
+        //your code here
+        arr.sort(function(a,b){return a-b})
+        dep.sort(function(a,b){return a-b})
+        let currentArrvTimeIndex =1
+        let currentDepTimeIndex = 0
+        let usedPlatform =1
+        let minPlatform =0
+        while(currentArrvTimeIndex <n && currentDepTimeIndex <n){ //Compare ith Arrival with i-1 Dep to increase usedPlatform
+            let currentArrvTime = arr[currentArrvTimeIndex]
+            let currentDepTime = dep[currentDepTimeIndex]
+            if(currentArrvTime <= currentDepTime){
+                usedPlatform += 1
+                currentArrvTimeIndex += 1
+            }else{
+                usedPlatform -= 1
+                currentDepTimeIndex += 1
+                
+            }
+            //console.log(usedPlatform)
+            minPlatform = (usedPlatform > minPlatform) ? usedPlatform : minPlatform
+        }
+        return minPlatform
+    }
+
+
