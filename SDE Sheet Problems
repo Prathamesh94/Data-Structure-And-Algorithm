@@ -1119,6 +1119,18 @@ The head of the linked list is also k nodes from the front of the loop. So, if w
     
 ===========================================================================================================================================================
 
+    Q36) Flattening of a LinkedList
+    
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+Q37)Rotate a LinkedList: 
     
     
     
@@ -1131,6 +1143,51 @@ The head of the linked list is also k nodes from the front of the loop. So, if w
 ===========================================================================================================================================================
 
     
+    Q38)Clone a Linked List with random and next pointer
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+@39)  3Sum : Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+
+Notice that the solution set must not contain duplicate triplets.
+
+Code:
+var threeSum = function(nums) {
+    
+    let hashmap = {}
+    let triplets = []
+    let n = nums.length
+    nums.sort(function(a,b){return a-b})
+    console.log(nums)
+    for(let i=0;i<n;i++){
+        let low =i+1
+        let high =n-1
+        while(low<high){
+            let sum = nums[low]+nums[high]+nums[i]
+            if(sum > 0){
+                high -= 1        
+                } else if(sum < 0){
+                low +=1
+                } else{
+               let triplet = [nums[i],nums[low],nums[high]]
+               triplets.push(triplet)
+               while(low <high && triplet[1] == nums[low]) { low += 1}
+                while(high >low && triplet[2] == nums[high]) { high -= 1}
+                
+                } 
+        }
+        
+        while(i+1 <n && nums[i] == nums[i+1]) { i += 1}
+    }
+    return triplets
+    
+};
+    
     
     
     
@@ -1141,7 +1198,37 @@ The head of the linked list is also k nodes from the front of the loop. So, if w
     
 ===========================================================================================================================================================
 
+    Q40) Trapping Rain Water : Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
     
+    Code:
+    var trap = function(height) {
+    
+    let hashmapright = {}
+    let hashmapleft = {}
+    let n = height.length
+    let max = 0
+    let count =0 
+    for(let i=0;i<n;i++){
+        if(height[i]>max){
+            max = height[i]
+        }
+        hashmapleft[i] = max
+    }
+    max = 0
+    for(let i=n-1;i>=0;i--){
+        if(height[i]>max){
+            max = height[i]
+        }
+        hashmapright[i] = max
+    }
+    //console.log(hashmapright,hashmapleft)
+    for(let i=0;i<n;i++){
+        count += Math.min(hashmapleft[i],hashmapright[i])-height[i]
+    }
+    return count
+    
+    
+};
     
     
     
@@ -1152,7 +1239,25 @@ The head of the linked list is also k nodes from the front of the loop. So, if w
     
 ===========================================================================================================================================================
 
-    
+    Q41)  Remove Duplicates from Sorted Array : Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
+
+Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+
+Return k after placing the final result in the first k slots of nums.
+
+Code: 
+var removeDuplicates = function(nums) {
+    let i =0
+    for(let j=1;j<nums.length;j++){
+        if(nums[i] != nums[j]){
+            i += 1
+            nums[i] = nums[j]
+            
+        }
+        
+    }
+    return i+1
+};
     
     
     
@@ -1163,28 +1268,25 @@ The head of the linked list is also k nodes from the front of the loop. So, if w
     
 ===========================================================================================================================================================
 
+    @42) . Max Consecutive Ones : Given a binary array nums, return the maximum number of consecutive 1's in the array.
     
-    
-    
-
-
-
-
-    
-===========================================================================================================================================================
-
-    
-    
-    
-    
-
-
-
-
-    
-===========================================================================================================================================================
-
-    
+    Code: 
+    var findMaxConsecutiveOnes = function(nums) {
+    let max =0
+    let count =0
+    let n = nums.length
+    for(let i=0;i<n;i++){
+        if(nums[i] == 1){
+            count += 1           
+           }else{
+               count =0
+           }
+        if(count > max){
+           max = count
+           }
+    }
+    return max
+};
     
     
     
@@ -1280,4 +1382,153 @@ findPlatform(arr, dep, n)
         return minPlatform
     }
 
+
+    
+    
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    Q42) Job Sequencing Problem : Given a set of N jobs where each jobi has a deadline and profit associated with it.
+
+Each job takes 1 unit of time to complete and only one job can be scheduled at a time. We earn the profit associated with job if and only if the job is completed by its deadline.
+
+Find the number of jobs done and the maximum profit.
+
+Note: Jobs will be given in the form (Jobid, Deadline, Profit) associated with that Job.
+
+
+Code:
+    JobScheduling(arr, n)
+    {
+        // code here
+        let uniqueDeadlinesJobs ={}
+        let maxProfit = 0
+        let uniqueProfits = {}
+        let maxDeadline =0 
+        for(let jobIndex=0;jobIndex<n;jobIndex++){
+            if(arr[jobIndex].profit > maxDeadline){
+                maxDeadline = arr[jobIndex].profit
+            }
+        }
+        arr.sort(function(a,b){return b.profit-a.profit})
+        let jobCount =0
+        //console.log(arr)
+        let slots = {}
+        for(let timeslot=0;timeslot<maxDeadline;timeslot++){
+            slots[timeslot] = -1
+        }
+        for(let jobIndex=0;jobIndex<n;jobIndex++){
+           for(let timeslot=arr[jobIndex].dead;timeslot>0;timeslot--){
+               if(slots[timeslot] == -1){
+                   jobCount +=1
+                   maxProfit += arr[jobIndex].profit
+                   slots[timeslot] =arr[jobIndex].id
+                   break
+               }
+       }
+       }
+        return [jobCount,maxProfit]
+    }
+    
+     
+    
+    
+
+===========================================================================================================================================================
+
+    
+     Q42)Fractional Knapsack Problem : Greedy Approach : Given weights and values of N items, we need to put these items in a knapsack of capacity W to get the maximum total value in the knapsack.
+Note: Unlike 0/1 knapsack, you are allowed to break the item. 
+     
+     Code:
+     fractionalKnapsack(W, arr, n)
+    {
+        // code here
+        let items = {}
+        let totalValue =0
+        for(let itemno =0;itemno < n ; itemno++){
+            arr[itemno]["valueRatio"] = arr[itemno].value/arr[itemno].weight
+        }
+        arr.sort(function(a,b){return b.valueRatio-a.valueRatio})
+        //console.log(arr)
+        for(let itemno =0;itemno < n&& W>0 ; itemno++){
+            if(W>arr[itemno].weight){
+                W -= arr[itemno].weight
+                totalValue += arr[itemno].value
+            }else{
+                totalValue += W*arr[itemno].valueRatio
+                W =0
+            }
+        }
+        return totalValue
+    }
+    
+    
+    
+    
+===========================================================================================================================================================
+
+    
+   Greedy algorithm to find minimum number of coins: Given a value V and array coins[] of size M, the task is to make the change for V cents, given that you have an infinite supply of each of coins{coins1, coins2, ..., coinsm} valued coins. Find the minimum number of coins to make the change. If not possible to make change then return -1.
+    
+    Code:
+    
+       minCoins(coins, V, M)
+    {
+        // table[i] will be storing
+        // the minimum number of coins
+        // required for i value. So
+        // table[V] will have result
+        let table = new Array(V+1);
+        // Initialize first table value as zero
+        table[0] = 0;
+         
+        // Initialize all table values as Infinite except for the first one
+        for (let i = 1; i <= V; i++)
+        {
+            table[i] = Number.MAX_VALUE;
+        }
+        // Compute minimum coins required for all
+        // values from 1 to V
+        for (let i = 1; i <= V; i++)
+        {
+            // Go through all coins smaller than i
+            for (let j = 0; j < M; j++)
+            if (coins[j] <= i)
+            {
+                let sub_res = table[i - coins[j]];
+                if (sub_res != Number.MAX_VALUE
+                       && sub_res + 1 < table[i])
+                    table[i] = sub_res + 1;  
+            }   
+        }
+        
+        if(table[V] == Number.MAX_VALUE)
+            return -1;
+        
+        return table[V];
+    }
+    
+    
+    
+        
+
+
+
+
+    
+===========================================================================================================================================================
+
+    
+    
+    
+    
+    
 
