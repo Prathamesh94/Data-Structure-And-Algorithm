@@ -1,0 +1,56 @@
+Q1) Maximum Absolute Difference: You are given an array of N integers, A1, A2, .... AN.
+
+Return the maximum value of f(i, j) for all 1 ≤ i, j ≤ N. f(i, j) is defined as |A[i] - A[j]| + |i - j|, where |x| denotes absolute value of x.
+
+Answer:
+f(i, j) = |A[i] - A[j]| + |i - j| can be written in 4 ways (Since we are looking at max value, we don’t even care if the value becomes negative as long as we are also covering the max value in some way).
+
+(A[i] + i) - (A[j] + j)
+-(A[i] - i) + (A[j] - j) 
+(A[i] - i) - (A[j] - j) 
+(-A[i] - i) + (A[j] + j) = -(A[i] + i) + (A[j] + j)
+Note that case 1 and 4 are equivalent and so are case 2 and 3.
+
+We can construct two arrays with values: A[i] + i and A[i] - i. Then, for the above 2 cases, we find the maximum value possible. For that, we just have to store minimum and maximum values of expressions A[i] + i and A[i] - i for all i
+
+
+Code:
+
+module.exports = { 
+ //param A : array of integers
+ //return an integer
+	maxArr : function(A){
+        let a = Number.MAX_SAFE_INTEGER, b = Number.MAX_SAFE_INTEGER;
+        let c = Number.MIN_SAFE_INTEGER, d = Number.MIN_SAFE_INTEGER;
+        
+        let id = 0;
+        A.forEach(ele => {
+           id++;
+           a = Math.min(a, ele - id);
+           b = Math.min(b, ele + id);
+           c = Math.max(c, ele - id);
+           d = Math.max(d, ele + id);
+        });
+        return Math.max(c - a, d - b);
+	}
+};
+
+
+Q2)  Max Sum Contiguous Subarray : Find the contiguous non-empty subarray within an array, A of length N, with the largest sum.
+
+
+Answer:
+
+code:
+module.exports = { 
+ //param A : array of integers
+ //return an integer
+	maxSubArray : function(A){
+        let max = -1000000000, sum = 0;
+        for(let i = 0; i < A.length; i++){
+            sum = Math.max(A[i], A[i] + sum);
+            max = Math.max(max, sum);
+        }
+        return max;
+	}
+};
