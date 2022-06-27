@@ -1,0 +1,65 @@
+module.exports = { 
+ //param A : array of array of integers
+ //return an integer
+	solve : function(A){
+        let n =A.length
+            let ans = 0
+            let sums = []
+            let prefixSum = []
+            for(end =0;end<n;end++){
+                let sum =0
+                let m = A[end].length
+                prefixSum.push([])
+                for(let j=0;j<m;j++){
+                    sum +=A[j][end]
+                    
+                    prefixSum[end].push(sum)
+                    sums.push(sum)
+                    ans += sum
+                    ans += A[j][end]
+                }
+
+            }
+            for(end =0;end<n;end++){
+                let sum =0
+                let m = A[end].length
+                for(let j=0;j<m;j++){
+
+                    sum +=A[j][end]
+                    prefixSum[j][end] = sum
+                    sums.push(sum)
+                    ans += sum
+                }
+
+            }
+            console.log(prefixSum)
+            let ans1 = 0
+            for(tl_i =0;tl_i<n;tl_i++){
+                let sum =0
+                for(let tl_j=0;tl_j<n;tl_j++){
+                    for(let br_i=tl_i;br_i<n;br_i++){
+                        for(let br_j=tl_j;br_j<n;br_j++){
+
+                            ans1 += subMatrixSum(prefixSum,tl_i,tl_j,br_i,br_j)
+
+                         }
+                    }
+                }
+            }
+            //const sum1= sums.reduce((partialSum, a) => partialSum + a, 0);
+            //console.log(sum1)
+            return ans1
+
+	}
+};
+function subMatrixSum(prefixSum,a1,b1,a2,b2){
+    
+    let sum = 0
+    sum += prefixSum[a2][b2]
+    if(a1 >0 && b1 >0) sum += prefixSum[a1-1][b1-1]
+    if(a1 >0) sum -= prefixSum[a1-1][b2]
+    if(b1 >0) sum -= prefixSum[a2][b1-1]
+    console.log(a1,b1,a2,b2,sum)
+    return sum
+
+}
