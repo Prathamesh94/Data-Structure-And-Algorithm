@@ -1,0 +1,69 @@
+/*You are given two integer arrays nums and multipliers of size n and m respectively, where n >= m. The arrays are 1-indexed.
+
+You begin with a score of 0. You want to perform exactly m operations. On the ith operation (1-indexed), you will:
+
+Choose one integer x from either the start or the end of the array nums.
+Add multipliers[i] * x to your score.
+Remove x from the array nums.
+Return the maximum score after performing m operations.*/
+
+Link:https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations/
+
+//Space optimized iterative DP
+var maximumScore = function(nums, multipliers) {
+	const n = nums.length, m = multipliers.length;
+	const dp = Array(m + 1).fill(0);
+	
+	for (let op = m - 1; op >= 0; op--) {
+		const nextRow = [...dp];
+
+		for (let left = op; left >= 0; left--) {
+			dp[left] = Math.max(multipliers[op] * nums[left] + nextRow[left + 1], 
+						multipliers[op] * nums[n - 1 - (op - left)] + nextRow[left]);
+		}
+	}
+	
+	return dp[0];
+};
+/*
+Iterative DP
+var maximumScore = function(nums, multipliers) {
+	const n = nums.length, m = multipliers.length;
+	const dp = Array(m + 1).fill(0).map(x => Array(m + 1).fill(0));
+	
+	for (let op = m - 1; op >= 0; op--) {
+		for (let left = op; left >= 0; left--) {
+			dp[op][left] = Math.max(multipliers[op] * nums[left] + dp[op + 1][left + 1], 
+								multipliers[op] * nums[n - 1 - (op - left)] + dp[op + 1][left]);
+		}
+	}
+	
+	return dp[0][0];
+};*/
+
+
+/*Recursive with memo
+
+var maximumScore = function(nums, multipliers) {
+	const memo = Array(multipliers.length + 1).fill(-1)
+							.map(x => Array(multipliers.length + 1).fill(-1));
+    
+    function helper(op, left) {
+        if (op == multipliers.length)
+            return 0;
+
+        if (memo[op][left] != -1)
+			return memo[op][left];
+        
+		const right = (nums.length - 1) - (op - left);
+
+        const l = multipliers[op] * nums[left] + helper(op + 1, left + 1);
+        const r = multipliers[op] * nums[right] + helper(op + 1, left);
+
+        return memo[op][left] = Math.max(l, r);
+    }
+	
+	return helper(0, 0);
+};
+    
+};*/

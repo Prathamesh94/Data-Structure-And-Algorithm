@@ -1,0 +1,56 @@
+
+Question:
+//Given an m x n matrix board containing 'X' and 'O', capture all regions that are 4-directionally surrounded by 'X'.
+//A region is captured by flipping all 'O's into 'X's in that surrounded region.
+
+/**
+ * @param {character[][]} board
+ * @return {void} Do not return anything, modify board in-place instead.
+ */
+var solve = function(board) {
+    let n = board.length
+    let m = board[0].length
+    let visited = new Array(n).fill(-1).map(()=>new Array(m).fill(-1))
+   // console.log(visited)
+    for(let i=0;i<n;i++){
+        for(let j=0;j<m;j++){
+         if((i == 0 || i == n-1 || j == 0 || j == m-1) && board[i][j] == 'O' && visited[i][j] == -1) 
+         {
+            dfs(i,j)   
+            // console.log(visited)
+            }   
+        }
+    }
+    for(let i=0;i<n;i++){
+        for(let j=0;j<m;j++){
+            if(visited[i][j] == -1 && board[i][j] == 'O'){
+                
+                board[i][j] = 'X'
+               
+               }       
+        }
+    }
+    return board
+    
+    function dfs(row,col){
+        let delrow = [1,0,-1,0]
+        let delcol = [0,1,0,-1]
+        visited[row][col] = 1
+        
+        for(let k=0;k<4;k++){
+            let nrow = row+delrow[k]
+            let ncol = col+delcol[k]
+            
+            if(nrow< n && ncol <m && nrow >=0 && ncol >=0 && visited[nrow][ncol] ==-1 && board[nrow][ncol] == 'O'){
+                dfs(nrow,ncol)
+            }
+            
+            
+            
+        }
+        return
+        
+        
+    }
+    
+};

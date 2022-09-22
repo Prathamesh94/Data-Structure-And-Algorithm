@@ -1,0 +1,73 @@
+Given a grid of size n*m (n is the number of rows and m is the number of columns in the grid) consisting of '0's (Water) and '1's(Land). Find the number of islands.
+
+Note: An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically or diagonally i.e., in all 8 directions.
+
+Example 1:
+
+Input:
+grid = {{0,1},{1,0},{1,1},{1,0}}
+Output:
+1
+Explanation:
+The grid is-
+0 1
+1 0
+1 1
+1 0
+All lands are connected.
+Solution:
+ class Solution {
+    // Function to find the number of islands.
+    numIslands(grid) {
+        // code here
+        let n = grid.length
+        let m = grid[0].length
+        let countIslands = 0 
+        for(let i=0;i<n;i++){
+            for(let j=0;j<m;j++){
+                
+                if(grid[i][j] == 1){
+                    bfs(i,j)
+                    countIslands += 1
+                }
+            }
+            
+        }
+        
+        return countIslands
+        
+        
+        function bfs(i,j){
+            
+            let queue = []
+            queue.push([i,j])
+            grid[i][j] = -1
+            while(queue.length != 0){
+                let front = queue.shift()
+                //console.log(front,i,j)
+                let row = front[0]
+                let col = front[1]
+                
+                for(let delrow =-1;delrow<=1;delrow++){
+                    for(let delcol = -1;delcol<=1;delcol++){
+                        
+                        let nrow = delrow + row
+                        let ncol = delcol +col
+                        //console.log(row,col,nrow,ncol)
+                        if(nrow >=0 && nrow < n && ncol >=0 && ncol <m && grid[nrow][ncol] == 1){
+                            grid[nrow][ncol] = -1
+                            queue.push([nrow,ncol])
+                            // console.log(queue)
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+                
+            }
+            
+        }
+    }
+}

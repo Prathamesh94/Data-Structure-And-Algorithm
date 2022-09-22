@@ -1,0 +1,90 @@
+
+Problem Description
+Given an integer A, you have to find the Ath Perfect Number.
+
+A Perfect Number has the following properties:
+
+It comprises only 1 and 2.
+The number of digits in a Perfect number is even.
+It is a palindrome number.
+For example, 11, 22, 112211 are Perfect numbers, where 123, 121, 782, 1 are not.
+
+
+
+Problem Constraints
+1 <= A <= 100000
+
+Input Format
+The only argument given is an integer A.
+
+Output Format
+Return a string that denotes the Ath Perfect Number.
+
+Example Input
+Input 1:
+
+ A = 2
+Input 2:
+
+ A = 3
+
+
+Example Output
+Output 1:
+
+ 22
+Output 2:
+
+ 1111
+
+
+Example Explanation
+Explanation 1:
+
+First four perfect numbers are:
+1. 11
+2. 22
+3. 1111
+4. 1221
+Explanation 2:
+
+First four perfect numbers are:
+1. 11
+2. 22
+3. 1111
+4. 1221
+
+
+Solution:
+
+module.exports = { 
+ //param A : integer
+ //return a strings
+	solve : function(A){
+
+        let arr = []
+        if(A == 1) return 11
+        if(A == 2) return 
+        arr.push("1")
+        arr.push("2")
+        
+        for(let i=2;i<A;i += 1){
+            a = (i%2 == 0) ? arr.shift() :a
+            let b = (i%2 == 0)? a+"1":a+"2"
+            arr.push(b)
+        }
+        return arr[arr.length-1]+reverse(arr[arr.length-1])
+
+    function reverse(str){
+        let n = str.length
+        let newstr = ""
+        for(let i=n-1;i>=0;i--){
+            newstr += str[i]
+        }
+        return newstr
+
+    }
+	}
+
+};
+

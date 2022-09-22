@@ -1,0 +1,29 @@
+Round 1
+1. Leet Code Medium problems
+2. System Design Basics
+
+Round 2
+1. LLD
+
+Link:
+https://leetcode.com/discuss/interview-experience/1897611/Zepto-or-SSE-or-Bangalore-or-March-2022
+
+System Design Basics [ 1/2 Hr ]
+
+Why use Kafka
+How Consumer knows when Kafka Node is down
+Why use Redis
+Usecases for SQL vs NoSQL
+How to scale MySQL and partition DB
+Which DB to use for Visitor History in amazon website and why ? How will you scale ?
+
+
+To be solved:
+
+https://leetcode.com/problems/gas-station/
+https://leetcode.com/problems/smallest-common-region/
+https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+https://leetcode.com/problems/palindrome-pairs/
+https://leetcode.com/problems/palindrome-pairs/submissions/
+
+Tries and Graph

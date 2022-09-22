@@ -1,0 +1,55 @@
+Given an undirected graph with V vertices. We say two vertices u and v belong to a single province if there is a path from u to v or v to u. Your task is to find the number of provinces.
+
+Note: A province is a group of directly or indirectly connected cities and no other cities outside of the group.
+
+Link: https://practice.geeksforgeeks.org/problems/number-of-provinces/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=number_of_provinces
+
+
+Solution:
+
+/**
+ * @param {number} V
+ * @param {number[][]} adj
+ * @return {number}
+*/
+
+class Solution {
+  numProvinces(V,adj){
+    //code here
+    
+    let visited = new Array(adj.length).fill(-1)
+    let n = adj.length
+    let m = adj[0].length
+    let list = {}
+    for(let i=0;i<n;i++){
+        list[i] = []
+        for(let j=0;j<m;j++){
+            if(adj[i][j] == 1){
+                list[i].push(j)
+            }
+        }
+    }
+    let countProvinces = 0
+    for(let i=0;i<n;i++){
+        if(visited[i] == -1){
+            dfs(i)
+            countProvinces += 1
+        }
+    }
+    return countProvinces
+    function dfs(node){
+        
+        visited[node] = 1
+        for(let i =0;i<n;i++){
+            
+            if (visited[list[node][i]] == -1){
+                dfs(list[node][i])
+            }
+            
+        }
+        
+    }
+    
+    
+  }
+}

@@ -1,0 +1,38 @@
+Link:https://practice.geeksforgeeks.org/problems/flood-fill-algorithm1856/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=flood-fill-algorithm
+An image is represented by a 2-D array of integers, each integer representing the pixel value of the image.
+
+Given a coordinate (sr, sc) representing the starting pixel (row and column) of the flood fill, and a pixel value newColor, "flood fill" the image.
+
+To perform a "flood fill", consider the starting pixel, plus any pixels connected 4-directionally to the starting pixel of the same color as the starting pixel, plus any pixels connected 4-directionally to those pixels (also with the same color as the starting pixel), and so on. Replace the color of all of the aforementioned pixels with the newColor.
+Solution:
+
+class Solution {
+    floodFill(arr,n, m, sr, sc, newColor) {
+        // code here
+        
+        let A = arr
+        let currentColor  = A[sr][sc]
+        let delrow = [-1,0,1,0]
+        let delcol = [0,1,0,-1]
+        
+        dfs(sr,sc)
+        return A
+        
+        function dfs(row,col){
+            
+            A[row][col] = newColor
+
+            for(let i =0;i<4;i++){
+                let nrow = row+delrow[i]
+                let ncol = col+delcol[i]
+                
+                if(nrow >=0 && nrow <n && ncol>=0&& ncol <m && A[nrow][ncol] == currentColor && A[nrow][ncol] != newColor){
+                    //A[nrow][ncol] = newColor
+                    dfs(nrow,ncol)
+                }
+            }
+            
+        }
+        
+    }
+}
