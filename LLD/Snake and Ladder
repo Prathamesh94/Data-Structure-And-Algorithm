@@ -1,0 +1,16 @@
+Question:https://github.com/championswimmer/low-level-design-problem/blob/main/problems/03-snake-and-ladders.md
+Solution:https://github.com/championswimmer/low-level-design-problem/tree/main/solutions/java/03-snakeladder
+
+Entity
+
+Game
+Player
+Snake
+    head
+    tail
+Ladder
+    start
+    end
+Board
+box
+Die

@@ -18,7 +18,7 @@ class Trie {
     let nodes = this.nodes
     for (const ch of num) {
       const next = nodes.get(ch) ?? new Map()
-      nodes.set(ch, next)
+      nodes.set(ch,next)
       nodes = next
     }
   }

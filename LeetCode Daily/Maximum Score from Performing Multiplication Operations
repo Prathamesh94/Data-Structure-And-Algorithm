@@ -14,7 +14,7 @@ var maximumScore = function(nums, multipliers) {
 	const n = nums.length, m = multipliers.length;
 	const dp = Array(m + 1).fill(0);
 	
-	for (let op = m - 1; op >= 0; op--) {
+	for (let op = m - 1; op >= 0; op--) {x
 		const nextRow = [...dp];
 
 		for (let left = op; left >= 0; left--) {

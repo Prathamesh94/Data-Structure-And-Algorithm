@@ -1,0 +1,91 @@
+DSA-DP Amazon list 
+OS GFG interview bit
+CN GFG interview bit
+LLD 4-5 lecture Scaler
+Indexing DBMS
+Class diagram
+
+
+Amazon Question target 70%
+CS fundamentals
+HLD-Use case and revision
+SQL Practice-Time complexity of SQL queries
+
+DSA revision
+DSA revision plan
+
+DSA Q:
+https://leetcode.com/discuss/interview-question/701938/google-max-sum-of-k-elements
+https://leetcode.com/problems/group-anagrams/
+https://leetcode.com/discuss/interview-question/object-oriented-design/1550957/Snake-and-Ladder-or-LLD
+
+Round - 1
+
+This round was taken by HireHunch team which asked 1 DS Algo question and 1 LLD question.
+Total time for interview : 1 hour
+
+YOE : 4 year at a product based company
+
+
+Design Parking Lot
+Design Snake & Ladder LLD
+https://github.com/championswimmer/low-level-design-problem/blob/main/problems/03-snake-and-ladders.md
+Design splitwise LLD
+Design notification service LLD which supports follwing content to send
+Text
+Image
+Video
+They can be send by
+Whatsapp
+SMS
+Email
+and SMS do not support video content
+
+
+
+
+Given bunch of Strings , calculate shortest unique prefix for each of them.
+For Ex: ["dog" , "apple" , "cat" , "dove","cattle"]
+Ans: ["dog" , "a" , -1 , "dov" , "cattle"]
+
+
+
+The following problem given:
+
+Q1. Given an array of length n, find the maximum sum of k elements by traversing only via the start and end of the array (k corner elements).
+e.g. array = [1,5,6,78,9,0,9,99,8]
+k=4
+Ans - 8+99+9+1
+
+Design UBER LLD - Objects, Methods and Attributes, Standard requirements
+LC Medium - https://leetcode.com/problems/flatten-nested-list-iterator/
+
+
+
+
+I got question from this list(coin change) and also saw many past candidates getting questions from this list.
+
+list
+
+subarray with sum k
+sort array with 0s and 1s
+minimum distant pair
+sum of all nodes in BST
+2nd largest in Array
+Middle of LL
+Given tree BST or not
+Minimum value in stack
+Inorder traversal without recursion
+Inorder traversal without recursion & stack (morris traversal)
+Biggest rectangle in histogram
+Reverse LL without space
+Binary matrix (setting row and columns as 0 if element is 0)
+Coin change problem
+BST Zigzag, left view, diameter
+Check valid/duplicate parenthesis
+Common element in three array
+Kth largest in BST
+Search in sorted matrix
+Target Sum
+
+https://www.codingninjas.com/codestudio/interview-experiences/byjus/interview-experience-senior-software-engineer-jul-2021-exp-0-2-years
