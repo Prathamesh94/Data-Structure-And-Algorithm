@@ -1,3 +1,107 @@
+ Revision:
+
+ Steps for LLD:
+ 1.High Level Overview
+ 2.Requirement Gathering
+    3. Ask Ideas/Features if anything missing
+    4. Clarify Requirement(Go in details)
+ 3. Final List of features
+ 4. Use case diagram(Activity Diagram)
+ 5. Identify Entities
+ 6. Create class diagram
+ 7. Possible Design patterns to be used
+
+----------------------------------------------------------------
+LLD -> Detailed template for interview
+
+1.Entities
+List Entities and attributes
+
+2. Schema Design
+    1.List all tables and columns
+        Type of column and Primary key ,foreign key and index
+    2.Relationship between table
+        is a/has a relationship  and aggregation/composition relationship
+    3.Cardinality between table
+        Many to Many / One to One / Many to One
+
+3.Class 
+    1. Models
+        Factories
+    2. Controllers
+    3. Services
+        Strategies
+    4. Repositories
+
+----------------------------------------------------------------
+
+Revision:
+
+HTTP Standards: https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
+SOLID
+Design Pattern
+Singleton: https://www.educative.io/answers/how-to-use-the-singleton-pattern-using-enum-in-java
+
+Use case and design patterns:
+
+Design Bookmyshow:https://github.com/Naman-Bhalla/bookmyshow
+Design Parking Lot:https://github.com/Naman-Bhalla/masterclass_parkingLot/tree/master/src/models
+    Strategy Pattern :calculateTicketPrice/assign parking slot based on vehicle size and time window
+    Spot assignment Strategy
+    DSA: Algorithm to provide available parking slot
+
+
+
+Design Snake & Ladder LLD:https://github.com/championswimmer/low-level-design-problem/tree/main/solutions/java/03-snakeladder
+    DSA: generate random(count and position) snake and ladder
+Design splitwise LLD:https://github.com/Naman-Bhalla/splitwise_nov21/blob/master/src/main/java/dev/naman/splitwise_nov21
+    SettleUp Strategy
+
+
+Design PAttern:
+
+Factory Pattern:
+    DBFactory creating DBclient for different types of databasess
+
+Des
+
+Java:
+interface
+inheritance
+constructor
+
+Multi thread:
+Synchozie
+Thread - run new thread
+Excutor - Thread Pool
+Callable - return value from thread
+Future - future return object from thred
+Join- wait for output of thread
+
+--------------------------------------
+ Points to noted while keeping attributes in entity:
+ Attributes of 
+ Data access patterns incase of repeation of data and can be access using join but to avoid join make it part of entity/class/table
+
+TODO Assignment:Implement other command after that attend next class.
+https://github.com/Naman-Bhalla/splitwise_feb22
+
+TODO BMS Assignment:Implement BookingController BookingService BookingRepository
+
+
+ParkingLot
+https://github.com/Naman-Bhalla/masterclass_parkingLot/tree/master/src/services
+
+
+Code Structure:
+strategies
+repository
+models
+services
+controllers
+dto
+
+
 One folder for all apis: https://abseil.io/resources/swe-book/html/toc.html
 
 https://coda.io/d/LLD-1_dx2o6Ck-X2o/LLD-1_suiEW
@@ -21,13 +125,23 @@ head first
 Gang of Four
 
 Design TicTacToe
- Design Snakes and Ladders
- Design a Parking Lot
+Design Snakes and Ladders
+Design a Parking Lot
+https://github.com/Naman-Bhalla/ticTacToeNov/tree/master/src/dev/naman
+
+Expense Sharing Application
+https://github.com/Naman-Bhalla/splitwise_nov21
+
+https://www.quora.com/What-algorithm-or-solution-do-the-people-at-Splitwise-use-for-its-debt-simplification-feature/answer/Marshall-Weir
 
 
+Twitter Snowfake:https://softwareengineering.stackexchange.com/questions/298797/uuid-vs-integer
+Singleton using enum
+Java Anotation??
+Java Reflection
+Serialization and Deserialization in Java with Example
+Java persistence tutorial:
+https://www.udemy.com/course/spring-hibernate-tutorial/
+https://www.udemy.com/course/hibernate-jpa-tutorial-for-beginners-in-100-steps/
 
- Steps:
- 1.High Level Overview
- 2.Requirement Gathering
- 3.Ask Ideas/Features   
-    
+

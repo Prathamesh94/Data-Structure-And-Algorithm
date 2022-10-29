@@ -1,0 +1,41 @@
+Must do:
+OS:
+http://people.eecs.berkeley.edu/~kubitron/courses/cs194-24-S14/index_lectures.html
+
+System Design:
+https://github.com/Naman-Bhalla/system-design-questions
+
+---------------------------------------------------------
+MYSQL indexing: 
+https://www.freecodecamp.org/news/database-indexing-at-a-glance-bb50809d48bd/
+https://www.oreilly.com/library/view/high-performance-mysql/0596003064/ch04.html
+https://towardsdatascience.com/indexing-very-large-tables-569811421ee0
+
+Redis indepth:
+https://topic.alibabacloud.com/a/why-redis-is-single-threaded-and-why-is-redis-so-fast_1_47_30266528.html
+https://redis.io/docs/getting-started/faq/
+
+https://medium.com/opstree-technology/redis-cluster-architecture-replication-sharding-and-failover-86871e783ac0
+https://aws.amazon.com/redis/
+https://architecturenotes.co/redis/
+
+Distrubuted System:
+https://architecturenotes.co/fallacies-of-distributed-systems/
+
+
+
+JPA repositry
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.core-concepts
+
+Java Concurrency:
+http://tutorials.jenkov.com/java-concurrency/index.html
+
+Singleton using enum:
+https://www.geeksforgeeks.org/advantages-and-disadvantages-of-using-enum-as-singleton-in-java/
+
+Google book:
+https://abseil.io/resources/swe-book
+
+
+interview Prep:
+https://github.com/jwasham/coding-interview-university#why-use-it

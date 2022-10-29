@@ -1,10 +1,10 @@
 DSA-DP Amazon list 
 OS GFG interview bit
 CN GFG interview bit
-LLD 4-5 lecture Scaler
+LLD 4-5 lecture Scaler done
 Indexing DBMS
-Class diagram
-
+Class diagram done
+Heap Implementation in Log N
 
 Amazon Question target 70%
 CS fundamentals
@@ -27,8 +27,30 @@ Total time for interview : 1 hour
 YOE : 4 year at a product based company
 
 
-Design Parking Lot
+How to approach LLD Round:
+
+
+
+Class diagram
+possible design patterns
+Hidden DSA problem
+
+
+Design Bookmyshow:https://github.com/Naman-Bhalla/bookmyshow
+Design Parking Lot:https://github.com/Naman-Bhalla/masterclass_parkingLot/tree/master/src/models
+    Strategy Pattern :calculateTicketPrice/assign parking slot
+    DSA: Algorithm to provide available parking slot
+
+
+
 Design Snake & Ladder LLD
+    DSA: generate random(count and position) snake and ladder
+Design splitwise LLD:https://github.com/Naman-Bhalla/splitwise_nov21/blob/master/src/main/java/dev/naman/splitwise_nov21
+    SettleUp Strategy
+
+
+
+
 https://github.com/championswimmer/low-level-design-problem/blob/main/problems/03-snake-and-ladders.md
 Design splitwise LLD
 Design notification service LLD which supports follwing content to send
@@ -40,11 +62,41 @@ Whatsapp
 SMS
 Email
 and SMS do not support video content
+Scheduling Notification
+Select mode of notifications
+Input whatsapp numbers,sms numbers and emails for sending notification.
+templates for sending notifications.
+Design UBER LLD - Objects, Methods and Attributes, Standard requirements
+Design a Rate Limiter:https://towardsdatascience.com/designing-a-rate-limiter-6351bd8762c6
+
+
+Design UBER:https://github.com/anomaly2104/lld-cab-booking-ola-uber-grab-lyft/tree/master/src/main/java/com/uditagarwal/cabbooking
+
+Driver
+User
+City
+Cab
+Booking
+Pricing
+Seats
+Source 
+Destination
+AdminUser
 
 
 
 
-Given bunch of Strings , calculate shortest unique prefix for each of them.
+
+
+
+
+
+
+
+
+
+https://leetcode.com/problems/minimum-jumps-to-reach-home/
+Given bunch of Strings , calculate shortest unique prefix for each of them.-> done
 For Ex: ["dog" , "apple" , "cat" , "dove","cattle"]
 Ans: ["dog" , "a" , -1 , "dov" , "cattle"]
 
@@ -52,40 +104,130 @@ Ans: ["dog" , "a" , -1 , "dov" , "cattle"]
 
 The following problem given:
 
-Q1. Given an array of length n, find the maximum sum of k elements by traversing only via the start and end of the array (k corner elements).
+Q1. Given an array of length n, find the maximum sum of k elements by traversing only via the start and end of the array (k  -corner elements). --> Done
 e.g. array = [1,5,6,78,9,0,9,99,8]
 k=4
 Ans - 8+99+9+1
+https://www.geeksforgeeks.org/maximize-sum-of-k-elements-in-array-by-taking-only-corner-elements/
 
-Design UBER LLD - Objects, Methods and Attributes, Standard requirements
-LC Medium - https://leetcode.com/problems/flatten-nested-list-iterator/
-
-
-
-
-I got question from this list(coin change) and also saw many past candidates getting questions from this list.
-
-list
-
-subarray with sum k
-sort array with 0s and 1s
-minimum distant pair
-sum of all nodes in BST
-2nd largest in Array
-Middle of LL
-Given tree BST or not
-Minimum value in stack
-Inorder traversal without recursion
-Inorder traversal without recursion & stack (morris traversal)
-Biggest rectangle in histogram
-Reverse LL without space
-Binary matrix (setting row and columns as 0 if element is 0)
-Coin change problem
-BST Zigzag, left view, diameter
-Check valid/duplicate parenthesis
-Common element in three array
-Kth largest in BST
-Search in sorted matrix
-Target Sum
+Coin change problem -> ?
+minimum distant pair -> Done
+Given list of strings, group the list of strings such that the words in each group is anagram-> Done
+Inorder traversal without recursion & stack (morris traversal) -> Done
+Biggest rectangle in histogram -> Done
+Inorder traversal without recursion -> done
+Minimum value in stack -> done
+Common element in three array -> Done
+subarray with sum k - > Done
+sort array with 0s and 1s -> Done
+sum of all nodes in BST -> done
+2nd largest in Array -> Done
+Middle of LL - > done
+Given tree BST or not -> Done 
+Reverse LL without space  -> Done 
+Binary matrix (setting row and columns as 0 if element is 0) ->Done
+BST Zigzag, left view, diameter -> Done
+Check valid/duplicate parenthesis -> done
+Kth largest in BST -> done
+Search in sorted matrix -> done
+Target Sum -> done
 
 https://www.codingninjas.com/codestudio/interview-experiences/byjus/interview-experience-senior-software-engineer-jul-2021-exp-0-2-years
+
+
+
+Byjus Round 1 Experience:
+
+
+
+Leet code:
+MAx person in party:https://leetcode.com/explore/interview/card/amazon/79/sorting-and-searching/497/
+Similar problem
+
+
+
+Design an Expense Sharing application
+- A user should be able to add an Expense. 
+- The expense can be shared among any number of users ( friends or colleagues ). 
+- The User creating an expense should be able to delegate a custom amount to any 
+    friends or colleagues for that particular expense.
+
+
+- Expose a function which accepts a user and should return the following - 
+   - The total amount the user owes to others
+   - The total amount the user is supposed to receive from others
+   
+   
+   
+Entities:
+
+LLD:
+
+Design an Expense Sharing application
+- A user should be able to add an Expense. 
+- The expense can be shared among any number of users ( friends or colleagues ). 
+- The User creating an expense should be able to delegate a custom amount to any 
+    friends or colleagues for that particular expense.
+
+
+- Expose a function which accepts a user and should return the following - 
+   - The total amount the user owes to others
+   - The total amount the user is supposed to receive from others
+   
+   
+   
+Entities:
+
+User
+    id
+    username
+    List<expense>
+    Map<user,amountOwed>
+    
+Expense
+    Name
+    amount
+    List <participant>
+    User paidBy
+    Map <user,amount> owedBy
+    
+    
+model:
+    class User {
+        
+        
+        
+    }
+    
+    class expense {
+        
+        
+    }
+    
+services:
+    
+    class expenseService{
+        
+        addExpense(){
+            
+        }
+    }
+    expense:
+        interface expenseStragy
+        
+    class userService{
+        
+        update(){
+            
+        }
+        
+    }
+    
+    
+repositorys
+    
+    
+
+    Kunal prajapati -Zendrive
+    Mukul Amazon
+    

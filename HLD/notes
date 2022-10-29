@@ -1,0 +1,165 @@
+
+Steps for HLD:
+1. MVP(Minimum Viable Product):
+    Mini requirement
+    Extended Required
+
+2. Estimation of scale
+    Storage
+    QPS
+    Read Heavy/Write Heavy
+    Mixed  Work load
+
+3. Desgin Goal
+    CAP-HC or HA
+    Consistency?
+    Low latency?
+    Availbility?
+
+4. API design
+    postorder
+    getTimeLine
+
+5. Actual Design Implementation
+    HLD -> Detailed template for interview
+        Explain tradeoff at each decision
+        1.Client
+        2.LB
+        3.Application Servers
+        4.DB servers
+        5.Queue if applicable
+        6.Logging and Monitoring
+        7.Security logging and monitoring
+
+
+1000 bytes - 1KB
+1000*1000Bytes - 1000KB - 1MB
+1000*1000*1000Bytes - 1000*1000KB-1000MB- 1GB
+1000*1000*1000*1000bytes - 1000*1000*1000KB-1000*1000MB-1000GB- 1TB
+
+Case Studies:
+
+Elastic Search Links:
+
+https://www.elastic.co/blog/found-elasticsearch-top-down
+
+https://www.elastic.co/blog/found-uses-of-elasticsearch
+
+https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up
+
+Google Search Engine
+Twitter/Instagram
+HIGH LEVEL DESIGN OF INSTAGRAM
+Trading System
+Hotstar
+IRCTC
+Mastering Chaos - A Netflix Guide to Microservices:https://www.youtube.com/watch?v=CZ3wIuvmHeM
+Hyper-threading? Context switching time? 
+Ride sharing app
+Food Delivery App
+Social Media App
+Uber Mysql as distributed system
+LEARN THE HIGH-LEVEL DESIGN OF QUORA
+LEARN THE HIGH-LEVEL DESIGN BEHIND LINKEDIN AND ITS FEED
+ONLINE TICKET BOOKING APPS
+LEARN THE SYSTEM DESIGN OF APPS LIKE FB MESSENGER & SLACK
+LEARN HOW OTT PLATFORMS LIKE NETFLIX USE DATA SCIENCE TO DECIDE THEIR PRICING MODEL
+DESIGN OF VIDEO STREAMING APPS
+DESIGN OF A MESSAGING APP
+SYSTEM DESIGN OF E-COMMERCE PLATFORMS THAT SCALE TO MILLIONS
+SYSTEM DESIGN OF A NOTIFICATION ENGINE LIKE AWS SNS
+EXPLORE THE HIGH-LEVEL DESIGN OF APPS LIKE NETFLIX
+HOW DO OTT PLATFORMS SCALE TO 200M+ CONCURRENT USERS?
+IMPORTANCE OF PROJECT BUILDING IN INTERVIEWS-C
+INTRODUCTION TO DOCKERS & CONTAINERISATION
+
+
+ CRACKING THE BEHAVIOURAL INTERVIEW FOR ENGINEERS
+ INDIVIDUAL CONTRIBUTOR TO ENGINEERING MANAGER: YOUR CAREER BREAKTHROUGH
+
+
+Revision:
+DNS:https://howdns.works/ep1/
+Consitent Hashing: https://medium.com/system-design-blog/consistent-hashing-b9134c8a9062
+Caching
+    Redis:https://stackexchange.github.io/StackExchange.Redis/PipelinesMultiplexers.html
+            IO Multiplexing using select poll and epoll
+    RedisCluster-> Distributed Caching
+CDN Caching
+
+CAssandra
+    Used for Mixed Load and time series data
+    Cassandra for each write writes to SS table,HDD,Transaction log
+
+Hbase:
+    Used for heavy Write System
+    Hbase only writes to Transaction log:https://blog.cloudera.com/apache-hbase-write-path/#:~:text=The%20write%20path%20is%20how,data%20file%20called%20an%20HFile.
+    Use case: IOT Sensor,Click Stream data,Analystical data,OLAP
+
+BloomFilter: 
+    To check whether element is not present with 100% surity
+
+Database:
+
+Nosql
+    Master-Master
+    Master-Salve
+
+columnar DB-
+    Cassandra
+    HBASE
+    Bigtable
+
+Testing Types:
+
+
+Deploymeny types:
+Bluegreen deployment
+
+
+Cassandra(Columnar DB) - 
+Hbase -> Write Heavy System using transaction log - > IOT sensor System/Analytical data/Click stream
+MongoDB(documentDB)->
+BloomFilter- Used to detect user is not present using binary representation - Use bloomfilter library Rebloom
+Zooper (wriiten in java) - Used as support system(HA,Consitenct) . Locks in ZK
+Kafka-
+Load Balancing
+CDN
+
+
+Client-Side Caching -
+Consitent hashing in local cache for distributed Cache:
+    Example: hazzelcast,google gauva,es cache
+event stream
+
+
+To be studied in Detailed:
+Zookeeper
+Concurrency practices -Book
+
+Protocol:
+HTTP(layer 7)
+Socket(Layer 4) -> MQTT -> 
+Long Polling
+Rest API
+gRPC
+Event Driven system
+
+
+Microservices/Monolith
+
+Reference:
+https://martinfowler.com/articles/microservices.html our god at thoughtworks :)
+DDIA ->http://xfido.com/pdf/designing-data-intensive-applications.pdf
+https://medium.com/swlh/log-structured-merge-trees-9c8e2bea89e8
+https://docs.mongodb.com/manual/sharding/#sharding-internals-shard-keys
+https://engineering.fb.com/2014/10/09/production-engineering/building-mobile-first-infrastructure-for-messenger/
+https://en.wikipedia.org/wiki/Spatial_database
+
+Use Case: Telegram case study
+
+
+case study 3
+elastic case study
+
+March 21 Intermidiate

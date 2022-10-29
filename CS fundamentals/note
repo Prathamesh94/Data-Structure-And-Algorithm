@@ -1,0 +1,21 @@
+Isolation level
+read uncommitted
+    no isolation => all the read phonomena can occur
+    any change from the other transaction is visible in the rest of the transactions happening at the
+    same time
+read committed
+    each query in a transaction only see the committed stuff (at the time of the query)
+    dirty read canʼt occur because youʼre not reading any dirty change
+repeatable-read
+    each query in a transaction ONLY SEES the committed changes at the beginning of the
+    transaction
+serialisable
+    all the transactions are bound to happen without any concurrency
+    you are not allowed to have parallel transactions
+
+
+Phantom read problem
+TX1ʼs step1 took place => Product 1 -> 50, Product 2 -> 80 TX2ʼs step1 occurred TX2 got committed
+In middle of TX1 product 3 came into the sale
+TX1ʼs step2 => Total sale amt => 140
+Consistency

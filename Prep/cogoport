@@ -1,0 +1,339 @@
+LLD/HLD Round
+
+
+/*
+Design yulu
+Requirement:
+We are trying to creta ebike rental service 
+it. has two kinds of bike 
+electric bike and pedal bike 
+Bike are in bike zone
+A user can go to the bike zone pick the bike scanning qr code 
+use the bike or take the ride 
+Stop the ride another bike zone 
+make the payment
+User will be to search bike zone location on app
+
+
+*/
+
+Entities:
+EndUser
+BikeStations
+Bike
+ElectricBike
+PedalBike
+Payment
+Ride
+
+User:
+user_id
+phoneNumber
+
+Bike:
+bike_id
+bike_type
+bikestation_id
+
+BikeStations
+bikeStation_id
+location
+
+Payment
+payment_id
+ride_id
+user_id
+amount
+paymentMethod
+paymentStatus
+
+
+Ride
+ride_id:PK
+user_id
+bike_id
+amount
+src_bikeStation_id
+des_bikeStation_id
+ride_status
+
+API:
+POST yulu/ride/startRide
+
+Request:
+{
+    "bikeStation":12,
+    "bike_id":101
+    "user_id":"797706693"
+}
+
+Response:
+HTTP: 200
+{
+    "success":true
+}
+
+
+PUT yulu/endRide
+
+Request:
+    
+
+
+Feedback:
+HTTP standards
+Elaborate as much as possible explain each and every decision and for LLD and HLD
+
+
+
+
+
+
+
+---------------
+Revision:
+SOLID
+Design pattern
+OOPS
+CS Fundamentals
+LLD
+HLD
+Elasticsearch
+Design Bookmyshow:https://github.com/Naman-Bhalla/bookmyshow
+Design Parking Lot:https://github.com/Naman-Bhalla/masterclass_parkingLot/tree/master/src/models
+    Strategy Pattern :calculateTicketPrice/assign parking slot
+    DSA: Algorithm to provide available parking slot
+Design Snake & Ladder LLD
+    DSA: generate random(count and position) snake and ladder
+Design splitwise LLD:https://github.com/Naman-Bhalla/splitwise_nov21/blob/master/src/main/java/dev/naman/splitwise_nov21
+    SettleUp Strategy
+
+
+
+Questions:
+
+Design Pub Sub System - LLD and  HLD
+Design Coffee Vending Machine- LLD and  HLD
+
+
+
+Difference between TCP/UDP, HTTP/HTTPS
+Do you have any questions for me?
+
+After the interview was over, I received a positive feedback
+
+Round 3 [Technical Interview - HLD discussion ~60min]
+Questions were mainly sort of discussion type.
+Which version of python, mysql and postgres do you use? Difference between Py3.8 and 3.5
+Read heavy db vs write heavy db? Use Cases
+How do you optimise queries? What are indexes? Some disadvantages
+Discussion on load balancers and consistent hashing
+How do you scale a relational db? Is it possible?
+Tell a scenario in you current project where you have coma across sharding
+How did you avoid a single point of failure?
+What are the protocols in L3/L4 layers?
+Do you have any idea of virtualization?
+Do you have any experience of docker and Kubernetes
+Some postgres commands,
+Discussion on working of git, difference b/w merge and rebase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+(function main() {
+  const readline = require("readline");
+  const r1 = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+  
+  var solution = function(s) {
+    // write your solution here..
+  };
+ 
+  var n, k;
+  r1.on("line", (input) => {
+    n = input;
+  }).on("close", () => {
+    console.log(solution(n));
+  });
+})();
+
+
+/**
+ * 
+ * Given a chess board of size M*N,Let says 1 represent occupied positions and 0 represents empty positions.
+Rook is a chess piece which can take any number of steps in horizontal or vertical directions in a single move unless it hits a occupied position
+Rook is initially positioned at start_x,start_y index.
+Goal is to find the minimum number of moves required for rook to move from start_x, start_y to end_x, end_y position
+
+
+Sample Input:
+start position: 0,1 
+end position: 4,4
+
+Chess board
+
+   0 1 2 3 4 5
+
+0  0 0 0 1 0 0
+1  0 0 0 0 1 0
+2  0 0 0 0 0 0
+3  0 0 0 0 1 0
+4  0 1 0 1 0 0
+5  0 0 0 0 0 0
+
+Output: 4
+
+Explaination: One of the minimum moves path here is:  0,1 -> 2,1 -> 2,5 -> 4,5 -> 4,4. Total 4 moves required here
+
+   0 1 2 3 4 5
+
+0  0 S 0 1 0 0
+1  0 0 0 0 1 0
+2  0 0 0 0 0 0
+3  0 0 0 0 1 0
+4  0 1 0 1 D 0
+5  0 0 0 0 0 0
+0,1 -> 4,4
+0,1 -> [1,1],down ->2,1,down | ->2,2->...2,5->| 4,5-> | 4,4
+
+
+You are given some lists of regions where the first region of each list includes all other regions in that list.
+
+Naturally, if a region x contains another region y then x is bigger than y. Also, by definition, a region x contains itself.
+
+Given two regions: region1 and region2, return the smallest region that contains both of them.
+
+If you are given regions r1, r2, and r3 such that r1 includes r3, it is guaranteed there is no r2 such that r2 includes r3.
+
+It is guaranteed the smallest region exists.
+
+
+Example 1:
+
+Input:
+regions = [["Earth","North America","South America"],
+["North America","United States","Canada"],
+["United States","New York","Boston"],
+["Canada","Ontario","Quebec"],
+["South America","Brazil"]],
+region1 = "Quebec",
+region2 = "New York"
+
+Output:
+"North America"
+
+Earth -> NA,SA
+
+NA-> US,Canada
+
+US-> NY, Boston
+
+Canada -> Ontario,Quebc
+
+SA-> Brazil
+
+ER,NA,Can,Quebec
+
+ER,NA,US,NY
+
+
+
+ */
+
+function minimumMoves(chessBoard,startRow,startCol,endRow,endCol){
+    
+    let n = chessBoard.length
+    if(n == 0) return -1
+    let m = chessBoard[0].length
+    let visited = new Array().fill().map(()=>new Array(-1))
+    let move = {
+                    "row":0,
+                    "col":0,
+                    "moveDirection":null
+                }
+    move["noOfMoves"] =0
+    let minMove = 0
+    DFS(startRow,startCol,move,[...visited])
+    return minMove
+
+function DFS(row,col,move,visited){
+    visited[row][col] = 1
+    if(row == endRow && col == endCol) {
+        minMove = Math.min(move["noOfMove"],minMove)
+        return true
+    }
+    let delrow = [1,0,-1,0]
+    let delcol = [0,1,0,-1]
+    let directions = ["L","U","R","D"]       
+
+    for(let i=0;i<4;i++){
+        let ncol = row-delcol[i]
+        let nrow = col-delrow[i]
+        if(nrow<n && nrow >= 0 && ncol <n && ncol >=0 ){
+            if(visited[nrow][ncol] == -1 && chessBoard[nrow][ncol] == 0){
+
+                if(move["moveDirection"] != directions[i]) {
+                    move["noOfMoves"] += 1
+                }
+                move["row"] = row
+                move["col"] = col
+                move["moveDirection"] = directions[i]
+                }
+                if(DFS(nrow,ncol,move,[...visited])) return true
+            }
+        }
+        
+    }
+
+}  
+
+
+//Test
+chessBoard = [[1,0,0],[0,1,0],[0,0,0]]
+minimumMoves(chessBoard,0,0,2,2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
