@@ -1,20 +1,43 @@
 TODO Tasks:
 
+Revert Uplers
+Revert MMT
+heap revision
+Time Complexity of Graphs
+Stored procedures
+Functional Programming
+6228. Words Within Two Edits of Dictionary
+6226. Destroy Sequential Targets
+6227. Next Greater Element IV
+RDBMS SQL queries pratices
+JAVA Design pattern pratice
+Prepare for Paypal-4 Questions
+DP - 3 Questions
+
 Behavioural Round
-
-
-CN
-BackTracking
 DP
 Problem Solving Speed
 Machine coding/GIT Project and link github link in resume
-JAVA
-Apply Jobs
+    Splitwise App
+    Study Revision App
+        Sequence of Documents(PDF/Website/Doc)
+    Monitoring and dashboard for trade monitoring and logging
+    Stock Mock strategy import and run 
+        
 Revision Notes for LLD/HLD/CS fundamentals
+Apply Jobs - 15th November
 
 
-
-
+JAVA Tutorial and Multithreading and concurrency. -Done
+JAVA Done
+Dungeon Princess done
+Amazon Revert Done
+Nodejs-Done
+Revert HAUD:Done
+Revert San San:Done
+CN -> Done
+BackTracking ->Done
+Company List -> Done
 Negotitations Done
 LLD -> Detailed template for interview  -> Done
 HLD -> Detailed template for interview  -> Done
@@ -66,3 +89,24 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories
 Uplers and other assessment during diwali or after diwali
 
 
+
+
+{
+  ssoLevel: '10',
+  ssoToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJ1bmlxdWUiOiIzYTM0NDcwZS0wOTAxLTQ3YTUtOGM1Ny00NDU3NzA2YmE4MzEiLCJ1c2VyVHlwZSI6IlJJTHBlcnNvbiIsImF1dGhMZXZlbCI6IjEwIiwiZGV2aWNlSWQiOm51bGwsImp0aSI6Ijg4NjNlMWFhLWFlZjEtNGRjNC04OThjLWE3YTE3ZGYyYmQyYyIsImlhdCI6MTY2NzE5OTU2Nn0.aQdKr_4XT3DRM2CyLV9MoAXdMphXqD2dbiQJUaWaI6vv3J9MnQW40kXwgiPOM9531VutlYiTgxKhPvOcLB-6lA',
+  sessionAttributes: {
+    user: {
+      subscriberId: '5000004661',
+      preferredLocale: 'en-US',
+      ssoLevel: '10',
+      unique: '3a34470e-0901-47a5-8c57-4457706ba831',
+      commonName: ''
+    }
+  },
+  lbCookie: '1',
+  "userAttributes":{
+    "imei": 'xyz',
+    "imsi": 'xyz',
+    "msisdn": 'xyz'
+  }
+}

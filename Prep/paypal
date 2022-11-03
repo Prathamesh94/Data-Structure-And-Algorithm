@@ -1,0 +1,65 @@
+https://www.interviewkickstart.com/interview-questions/paypal-interview-questions
+https://www.interviewbit.com/paypal-interview-questions/
+https://www.interviewbit.com/coding-interview-questions/#tags[]=57
+
+
+
+Binary Tree Example Code
+Strings and Arrays
+Linked List
+Recursion
+Bit Manipulation
+Small Programs (string, memory functions, etc.)
+Math and Probability
+
+1.Given a n*m chessboard and each non-empty cell contains either of the three pieces B, R and Q. B can move diagonally, R can move horizontally or vertically, Q can move in any direction in which B and R can move. Find the total number of valid chess moves possible.
+
+2.Given a string with lowercase letters and “?” where each “?” can be replaced by any lowercase character, find the total number of strings such that the first and last characters are the same and no adjacent characters are the same.
+
+
+Allowed languages: Java (Role was: Java Backend)
+Q1. https://leetcode.com/discuss/interview-question/1194238/paypal-max-tasks-that-can-be-completed-in-given-budget - 50 marks
+
+Q2. https://www.hackerearth.com/problem/algorithm/beautiful-numbers-05de0f51-101121ca/ - 100 marks
+There was some issue with 2nd question. Time limit given was 1sec but even after preprocessing my code was taking about 2 sec and hence TLE in 6/10 cases.
+Saw In hackerearth platform after round, some people have pointed this in discussion.
+
+----------------------------------------------------------------------------------------------
+
+https://leetcode.com/discuss/interview-question/1502150/paypal-oa
+https://leetcode.com/discuss/interview-question/2709441/Paypal-Online-Assessment
+https://leetcode.com/discuss/interview-question/1294014/PayPal-India-OA
+https://leetcode.com/discuss/interview-question/1862494/PAYPAL-or-SDE-2
+---------------------------------------------------------------------------------------------------------------
+
+I recently came across a question . The question was like
+You are given a straight line statring at 0 to 10^9. You start at zero and there are n tasks you can perform. ith task is located at point 'i' in the line and requries 't' time to be performed. To perform the task you need to reach the ppoint 'i' and spend 't' time at that location. e.g (5,8) lies at 5 so travel distance is 5 and work effort is 8.
+Total effort is calculated as travel distance + time required to complete the work.
+
+It takes one sec to travel one unit of path.
+
+Now we are given total T seconds and we need to complete as many tasks as possible and reach back to starting position
+Find the max number of tasks that you can finish in time T.
+e.g
+3 16 -> 3 tasks and 16 units of total time
+2 8 -> task 1 at position 2 in line and takes 8 sec to complete
+4 5 -> task 2 at position 4 in line and takes 5 sec to complete
+5 1 -> task 3 at position 5 in line and takes 1 sec to complete
+​​​​​​​
+Output : 2
+
+Explanation :
+If we take task 1 at location 2 which requires 8 sec then getting to location 2 takes 2s and completing the task takes 8s leaving us with only 6s which is not enough for completing other task
+
+On the other hand skiiping the fist taks leaves us enough time to complete the other two tasks.
+
+Going to location and coming back costs 2x5 =10s and performing task at location 4 and 5 cost us 5+1 = 6s. Total time spent will be 10s+6s=16s.
+
+I am new to graphs and DP so I was not sure which approach to use Hamiltonian cycle, Knapsack or Longest Path.
+
+Can someone please help me with the most efficient approach to solve this. This was asked in PayPal OA round.
+
+
+10 9 6
+
+6 9 10 

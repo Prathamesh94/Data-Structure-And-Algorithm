@@ -28,8 +28,11 @@ Steps for HLD:
         3.Application Servers
         4.DB servers
         5.Queue if applicable
-        6.Logging and Monitoring
-        7.Security logging and monitoring
+        6.Central Logging servers (Rsyslog)
+        7.Infracture and Network Monitoring(Servers are up and running, CPU utlization RAM utilization)-Solar wind
+        8.Logging and Monitoring and alerts(ELK and /AppD/Alert)
+        9.
+        10.Security logging and monitoring
 
 
 1000 bytes - 1KB
@@ -38,6 +41,9 @@ Steps for HLD:
 1000*1000*1000*1000bytes - 1000*1000*1000KB-1000*1000MB-1000GB- 1TB
 
 Case Studies:
+
+
+ELK:https://medium.com/dataseries/elk-stack-architecture-deep-dive-41168732f0e3
 
 Elastic Search Links:
 

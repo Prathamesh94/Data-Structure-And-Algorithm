@@ -4,6 +4,48 @@ Thread Pool:
 Multi thread merge sort
 Peterson solutions
 https://github.com/Naman-Bhalla/sept21
+https://github.com/Naman-Bhalla/threadsAug2022/tree/master/src/main/java/threads
+
+Runnable/Thread -Used if we don't need any output of thread..Returns nothing
+
+Callable/Future  -Used if we expect some output of that thread, returns value
+
+Executor - To launch new thread/task which can be managed by Executor Service
+
+ExecutorService - Used to manage lifecycle of thread and create thread pool
+
+Mutex - Only One thread can acquire lock on block of code
+
+Semaphores - N thread can acquire lock on block of code
+
+Synchronized - We dont want multiple peolple to manipulate same object at same time
+                Only one thread can access sync block at one time
+
+Thread pool executor in java is Semaphore
+
+synchronized Block is Mutex in java
+
+10
+
+
+Main Difference
+
+shutdown()-
+
+1. Doesn't block the calling a thread i.e. the thread who called the shutdown().
+2. Excecutor doesn't accept any new task after calling shutdown().
+awaitTermination() -
+
+1. Blocks the calling thread. (as join() method do)
+Point of Confusion:- If shutdown() does not kill the previously submitted tasks, why do we need awaitTermination()?
+
+awaitTermination means waiting for the tasks to be completed/terminated, right? shutdown() is doing the same- waiting for any task which is already submitted along with the running tasks to continue till completed/terminated, then why another method awaitTermination(..)? Below is the explanation:
+
+Suppose you can wait for 10 min only to complete all the task that are submitted and after that want to call shutdownNow()(---you already know what it do) then use awaitTermination(long timeout, TimeUnit unit) after calling shutdown().
+
+Notice the method arguments in awaitTermination(long timeout, TimeUnit unit). This timeout is the key here.
+
+If there is no time restriction, shutdown() is OK. No need of awaitTermination().
 
 Assignment:
 Quick sort using thread
@@ -15,6 +57,3 @@ https://docs.google.com/document/d/1dLSxeZRJMKNW14lszxAyqpuR1C0Usz9gRj3rYW-OU-s/
 
 
 
-thread pool executor in java -Semaphore
-
-synchronized-Mutex

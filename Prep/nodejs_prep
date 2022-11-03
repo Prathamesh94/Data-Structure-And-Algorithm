@@ -1,0 +1,52 @@
+https://medium.com/technofunnel/node-js-single-threaded-event-based-architecture-9f73daee37a1
+https://www.digitalocean.com/community/tutorials/node-js-architecture-single-threaded-event-loop
+
+
+Rest API:
+https://www.restapitutorial.com/
+
+
+String MEthods:
+
+String length
+String slice()
+String substring()
+String substr()
+String replace()
+String replaceAll()
+String toUpperCase()
+String toLowerCase()
+String concat()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String charAt()
+String charCodeAt()
+String split()
+
+
+String Search:
+String indexOf()
+String lastIndexOf()
+String search()
+String match()
+String matchAll()
+String includes()
+String startsWith()
+String endsWith()
+
+Templates:`Welcome ${firstName}, ${lastName}!`
+Template literals :${lastName}
+
+With BigInt the total number of supported data types in JavaScript is 8:
+
+BigInt
+Boolean
+Null
+Number
+Object
+String
+Symbol
+Undefined

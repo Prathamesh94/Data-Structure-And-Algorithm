@@ -1,0 +1,46 @@
+Design Amazon
+Feature:
+Search product
+Product Page
+Review
+Cart
+Payment
+Orders
+
+Services:
+
+
+Products
+Mongo DB
+
+Reviews
+Cassandra 
+
+Cart
+MongoDB
+
+Payment
+MySQL 
+
+Orders
+MySQL -> NoSQL
+
+Delivery
+
+User-Cart-Place Order-> Payment
+
+Order
+    Order Placed
+
+Payment
+    Intiate Payment
+    Process Payment
+    Payment Completed 
+
+Delivery
+    Intiate Delivery Process
+    Send communication to Vendor/amazon Partner
+
+Negative Scenarios
+
+Rollback_Event -> Payment Failed
