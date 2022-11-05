@@ -1,3 +1,36 @@
 How annotations works:
 https://www.baeldung.com/java-annotation-processing-builder
 https://www.baeldung.com/java-get-field-annotations
+https://twitter.com/gergelyorosz/status/1502947328797384710
+
+lecture:1
+https://github.com/scaleracademy/Project-Module-Oct-2022
+
+lecture:2
+https://github.com/scaleracademy/project-module-requirement-docs/tree/main/task-manager
+
+
+
+Spring Anotations:
+
+@componentscan - > mention specific package
+@restcontroller -> to define request mapping
+@requestmapping -> used to mention url or base path
+@getmapping 
+@getters
+@setters
+@autowire
+@bean
+
+Test:
+@springboottest
+@datajpatest
+spring JPA -> ORM
+
+REST:
+https://github.com/scaleracademy/Project-Module-Jul-2022
+POST: Create resource id generated at server end
+
+PUT: Override or Create id generated at client side
+
+PATCH: update resource partially

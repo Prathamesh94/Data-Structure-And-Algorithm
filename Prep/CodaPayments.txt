@@ -1,0 +1,59 @@
+Hibernate
+springboot
+JAVA
+SQL Queries
+LLD
+HLD
+SOLID
+CS fundamental
+DSA Revision
+
+Interface and other syntax of typescript:https://www.w3schools.com/typescript-> Done
+
+
+Golang Java Node.js Python Scala Hibernate Spring
+We are looking for a proactive, driven engineer who is hungry to contribute using their deep and fundamental knowledge in software development and automation. You will be responsible for the architecture, development, and evolution of key products and features at Coda.
+
+
+Java(Multi threading and Concurrency)
+Problem solving
+Live coding
+
+
+Project Manager Round
+
+
+Assessment
+
+
+Responsibilities:
+
+Design and develop highly scalable, reliable, secure, and fault-tolerant systems end to end using state of the art technology
+Work directly with Product and Technology team members to define and implement complex features
+Collaborate with other team members to learn and share best practices
+Understand and constantly optimize our products, identifying and fixing problems, improving stability and user experience
+Take operational responsibility for the services that are owned by your team
+Debug production issues across services
+Participate in on-call rotations as needed (we support a healthy work/life balance, so we invest in minimizing out-of-office interruptions and we use rotations to minimize on-call days)
+
+
+Requirements:
+
+5 years of experience in software development
+A bachelor's degree in computer science, engineering, mathematics, or a related field (or equivalent experience)
+Strong knowledge of one or more programming languages
+ (Java, Scala, Kotlin, Groovy, Go, C/C++, Rust, Python, C#, etc. ) and the ability to learn new programming languages quickly
+Strong understanding of software architecture
+Understanding of data systems and how to query/interact with them (RDBMS, NoSQL, Queues, etc. )
+A desire to build automation into everything you do, including implementing state of the art CI/CD practices and test automation
+Understanding of agile methodologies (e. g. Scrum)
+Good command of the English language and the ability to communicate effectively
+
+
+Bonus if you have:
+
+Experience building high scale APIs
+Knowledge of AWS and cloud technologies such as lambdas and containerization
+Experience in FinTech or related fields requiring strong security discipline
+
+
