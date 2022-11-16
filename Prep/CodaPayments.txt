@@ -1,12 +1,42 @@
+JAVA
+    polymorphism
+SQL Queries -Done
+CS fundamental -Done
+LLD - Done
+SOLID - Done
+HLD-Done
+Design Patterns-Done
+    Creational
+        Factory
+        Singleton
+        Abstract Factory
+        Builder
+
+
+    Structural
+        Decorator
+        Compistion
+        Adapter
+
+    Behavioural
+        Strategy
+        Observer
+        command
+
+
+
+
+
+
+        
+        
+DSA Revision
+Functional programming
+
 Hibernate
 springboot
-JAVA
-SQL Queries
-LLD
-HLD
-SOLID
-CS fundamental
-DSA Revision
+
+
 
 Interface and other syntax of typescript:https://www.w3schools.com/typescript-> Done
 
@@ -56,4 +86,56 @@ Experience building high scale APIs
 Knowledge of AWS and cloud technologies such as lambdas and containerization
 Experience in FinTech or related fields requiring strong security discipline
 
+
++++++++++++++++++++++++
+
+Chat application:
+
+private Chat
+group chat
+Online Status
+Message Notification
+Chat History
+
+1Milion DAU
+Availabilty 99%
+Latency
+
+
+
+
+
+Non Functional Requirement:
+
+30*1000000*100 bytes = 30*100*1MB = 3GB  = 3GB*365*10 = 30*400 = 10500 GB -> 10TB
+
+QPS -> 1000000/24*3600 = 300/ 7 = 50QPS
+
+Read-Write Heavy System
+
+
+Availabilty and Latency in important for this System
+
+
+
+
+Data 10TB
+
+
+
+
+1000000 Active -> 
+
+
+User A- > server 1
+user b -> serve 2
+
+
+userA(Sender) - server 1
+userB (Receiver)-server 2
+
+
+
+
+User sent 
 

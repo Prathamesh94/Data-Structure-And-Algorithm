@@ -1,0 +1,39 @@
+FB Messenger:
+
+
+Steps for HLD:
+1. MVP(Minimum Viable Product):
+    Mini requirement
+    Extended Required
+
+2. Estimation of scale
+    Storage
+    QPS
+    Read Heavy/Write Heavy
+    Mixed  Work load
+
+3. Desgin Goal
+    CAP-HC or HA
+    Consistency?
+    Low latency?
+    Availbility?
+
+4. API design
+    postorder
+    getTimeLine
+
+5. Actual Design Implementation
+
+
+
+Possible Protocols:
+https: To many request for each event
+GRC: To many request for each event
+Long Polling: To many idle connections
+Websockets:
+
+
+
+
+Client -> Proxy(LB)-> [Session Management server(Redis)[User : MachineID]] -> [Notification Service]server - > Messageing Queue(Kafka)
+

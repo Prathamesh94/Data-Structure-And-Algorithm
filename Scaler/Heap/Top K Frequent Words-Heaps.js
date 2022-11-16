@@ -59,10 +59,21 @@ function deleteHeap(arr){
 }
 
 function heapify(arr,n,i){
+/***
+ * Parent index for ith child
+ * 
+ * parent = i/2 -1 
+ * 
+ * 
+ * 
+ * 
+ */
 
+    //Child of node(i) in complete tree
+    
     let largest = i
-    let l = 2*i+1
-    let r = 2*i+2
+    let l = 2*i+1 //Left child for i
+    let r = 2*i+2 //Right child for i
     
     if(l<n && arr[l][1] > arr[largest][1]){
         largest = l

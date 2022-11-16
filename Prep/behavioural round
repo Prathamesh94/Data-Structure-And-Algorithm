@@ -5,3 +5,92 @@ https://www.scarletink.com/interviewing-at-amazon-leadership-principles/
 Deployment/build failures and observation
 Focus on Urgent Important/Important Not Urgent 
 Not on Urgent Not Important
+The categories:
+
+Data:
+
+An approach you took when you had enough data available.
+An approach you took when you had less data available.
+
+
+A choice you made when there were multiple solutions available.
+A time when you leveraged data to develop a solution.
+
+
+Situation : We were suppose to migrate 2000+ Services to nodejs from vendor product, but only live apis which are in use we are suppose to migrate only that services. We asked operationals team to get production traffic data based on which we were suppose to perform migration.
+
+For B2C segment we consumer didn't had any SIT environment due to which it was difficult of perform testing in SIT before promoting change to replica.
+
+Task: We decide to listdown API with their consumer and discuss with consumer to perform testing and coordinate proactively to ensure testing in done
+
+Action:
+We had design walkthrough with all stake holders , We shot a mail to consumer that we will be deploying in SIT on xx date we are expecting signoff by this date.
+
+Conclusion/Result:
+It was a difficult task but following up with every consumer we were able get testing done for 80% of application for few application as they were not available in SIT to decided to move in to replica and 95% testing was covered in replica .For 5% cases what we did is in production we did configuration on LB based on sourceip we will route traffic to nodejs rest all will be served by vendor product.This ensure impact only on tester device and rest all is working fine.If testing goes well we plan in phase wise manner zone wise.
+
+Decision: 
+
+A time when you took a quick/instinctive decision and succeeded.
+
+Situation:
+
+A time when you took a risky decision and failed.
+
+
+Innovation and hard work: 
+
+Related questions:
+
+A time when you devised a simple solution to a complex problem.
+
+
+A time when you raised the bar.
+A time when you solved a pain point.
+A time when you influenced a change by asking questions.
+A time when you invented something.
+A time when you did more than what was required.
+A time when you did something for customer satisfaction.
+
+Deadline: 
+Related questions:
+
+A time when you missed a deadline
+A time when you had to shift a deadline.
+
+
+Mistakes: 
+Related questions:
+
+*A time when you made a mistake.
+
+
+*A time you used the wrong approach when there was a better one.
+
+Something you did you thought was right, but it failed.
+A situation where you used external client/organizations plugin/adapter, which was faulty.
+
+
+Motivation:
+Related questions:
+
+*A time when you took an initiative.
+Best Practice to improve code quality
+
+*A time when you lead a project.
+Migration Project
+
+*A time when you boosted the morale of the team.
+log4j vulnerablility devops not able to resolve ELK issue
+
+Issue for two version of filebeat running on server
+
+Conflict: 
+Related questions:
+
+*A time when you handled a crisis.
+Resource crisis team reduced from 10 developers to 4
+
+*A time when you resolved a group conflict.
+Resolved conflict between manager and team mate keshav
+

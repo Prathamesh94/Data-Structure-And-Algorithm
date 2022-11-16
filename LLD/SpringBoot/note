@@ -13,14 +13,20 @@ https://github.com/scaleracademy/project-module-requirement-docs/tree/main/task-
 
 Spring Anotations:
 
+@SpringBootApplication
 @componentscan - > mention specific package
 @restcontroller -> to define request mapping
 @requestmapping -> used to mention url or base path
-@getmapping 
-@getters
-@setters
+@getmapping Sub url path in url or base path
+@getters for generating getter and setter method
+@setters for generating getter and setter method
 @autowire
 @bean
+@service
+@repository
+@controller
+
+JPA-> Hibranate
 
 Test:
 @springboottest

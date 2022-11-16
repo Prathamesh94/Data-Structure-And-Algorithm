@@ -19,11 +19,13 @@ List Entities and attributes
 
 2. Schema Design
     1.List all tables and columns
-        Type of column and Primary key ,foreign key and index
+        
     2.Relationship between table
         is a/has a relationship  and aggregation/composition relationship
     3.Cardinality between table
         Many to Many / One to One / Many to One
+    4.List down Attributes
+        Type of column and Primary key ,foreign key and index
 
 3.Class 
     1. Models
@@ -33,9 +35,28 @@ List Entities and attributes
         Strategies
     4. Repositories
 
+
+Design Patterns-
+    Creational
+        Factory
+        Singleton
+        Abstract Factory
+        Builder
+
+
+    Structural
+        Decorator
+        Compistion
+        Adapter
+
+    Behavioural
+        Strategy
+        Observer
+        command
 ----------------------------------------------------------------
 
 Revision:
+Functional programming:https://www.tutorialspoint.com/functional_programming/functional_programming_introduction.htm
 JAVA Concurrency:https://jenkov.com/tutorials/java-concurrency/index.html
 HTTP Standards: https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
 SOLID

@@ -1,0 +1,46 @@
+What You’ll Do
+Build and scale data models and improve system performance.
+Build and make scalable design choices for API interfaces to work across internal and external applications and services.
+Ability to quickly learn billing/payment related third party integration like stripe or adyen.
+Building software that improves the cost of running a service in production, reduces iteration time and helps you and the team make better decisions about how and what we build and try next.
+Build appropriate monitoring, logging, debugging for the health of the system.
+Communicate effectively across multiple teams and projects.
+Actively work on our AWS cloud infrastructure
+Mentor and learn from the developers within the engineering organization
+
+
+What We’re Looking For
+B.S. or M.S. in Computer Science or related field
+8+ years software development experience
+Experience building product infrastructure, distributed systems and data models
+Experience in Ruby on Rails, Go Lang, Java, Javascript/Node.js or similar language
+Experience with relational and NoSQL databases such as PostgreSQL, DynamoDB, Redis, and Cassandra
+Experience building for Cloud Infrastructure such as AWS, GCP, Azure or private clouds
+
+
+
+Questions:
+Technical Round 1 -
+
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+https://leetcode.com/problems/reverse-linked-list/ (recursively and iteratively)
+Working code was expected
+Hiring Manager -
+Asked about projects, deep dive into one project, some behavioural questions, etc.
+
+Technical Round 3 -
+
+https://leetcode.com/problems/restore-ip-addresses/
+Working code was expected, couldn't come up with the solution at first, interviewer gave hints but couldn't code in remaining time
+Technical Round 4 -
+
+Column wise print the array of arrays
+https://leetcode.com/problems/search-in-rotated-sorted-array/
+Working code was expected.
+
+https://algodaily.com/companies/keeptruckin
+
+Round 1
+
+Eval expression code
+

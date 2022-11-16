@@ -6,7 +6,7 @@ Using Bellman-Ford [ TC = O(VE) ]
 Using Dijkstra's Algorithm [ TC = O(E + Vlog(V)) ]
 Since the graph is Unweighted, we can solve this problem using Modified BFS. [ TC = O(V + E) ]
 ***/
-function shortestPath(N,M,edges){
+function shortestPath(N,M,edge){
     let adj = new Array(N).fill().map(()=>{new Array()})
 
     for(let i=0;i<M;i++){

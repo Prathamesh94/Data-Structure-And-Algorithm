@@ -1,5 +1,35 @@
+JD:
+Job Description
+Function: Software Engineering → Backend Development
+
+Node.js Data StructuresAlgorithms
+Responsibilities:
+
+You will contribute to all aspects of an agile software development lifecycle including design, architecture, development, documentation, testing and operations.
+You will build cutting-edge scalable systems by writing simple and efficient code.
+You will push your design and architecture limits for new product development.
+You will collaborate with product managers, and other key stakeholders within the MMT family to successfully execute projects.
+You will ensure compliance with build/release and configuration management process.
+
+
+Requirements:
+
+You possess a good understanding of Agile Methodology, Object Oriented Programming Concepts and Responsive Designs.
+You have hands-on experience on node.js and have done development across multiple browsers/platforms delivering mind-boggling results.
+You thrive in complexity and jump at the opportunity to collaborate with colleagues to deliver projects within tight deadlines.
+
+
+
+
+-------------------------------------------------------------
 https://blog.risingstack.com/node-js-at-scale-node-js-garbage-collection/
 
+
+dp
+graph
+tree
+tries
+heaps
 
 queue 
 tree graphs
@@ -11,3 +41,138 @@ arrays
 garbage collection basic
 internet basic
 node js advance
+
+
+internet basic-DNS/SSL
+nodejs
+garbage collection
+tree
+graph
+ll
+dynamic programmmic
+
+
+
+
+//Round 1
+
+//unsorted integers
+//Second Highest number
+
+//Example: [3,4,1,6,7,5,2]
+highest:3,4,6,7
+secondH:3,4,6
+
+function getSecondHighest(list){
+    let n = list.length
+    let highest = list[0]
+    let secondHighest = list[0]
+
+    for(let currentIndex=0;currentIndex<n;currentIndex++){
+        let currrentElement = list[currentIndex]
+
+        if(highest < currrentElement){
+            secondHighest = highest
+            highest = currrentElement
+
+        }else if(secondHighest < currrentElement){
+            secondHighest  = currrentElement
+        }
+    }
+    return secondHighest
+
+}
+let testList = [3,4,1,6,7,5,2]
+let output = getSecondHighest(testList)
+console.log(output)
+
+
+
+/****
+ * Design
+ * 
+ * Mobile app => micro A(Proxy/Orchestrator) => micro B(Business Logic) => Cache => DB
+ * 
+ * TPS:100-200TPS
+ * GET : POST
+ * 1 : 10
+ * Read Heavy System
+ * 
+ */
+
+
+/**
+ * Tech Stack: 
+ * REST API:
+ * Data format: JSON
+ * 
+ * Client =>
+ * 
+ * Client > Server Timeout
+ * 
+ * 
+ * 
+ * micro A -> Nodejs
+ * Streaming of request
+ * Size limit check
+ * 
+ * Timeout -> 
+ * Retry Strategy
+ * Circuit Breaker
+ * Connection Keep Alive
+ * 
+ * 
+ * micro B -> JAVA
+ *
+ * 
+ * Connection Pooling
+ * DB => MySQL,NoSQL
+ * 
+ * Primary/Second Failover
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+
+Second Round:
+Problem Solving + system design
+
+
+Javascript OOPS / Streams/Child spawn and fork
+HEAP
+
+ER Diagram
+LLD
+OOPS
+SOLID
+DSA
+
+
+https://leetcode.com/problems/unique-paths/ 
+This was meant to be a LLD + Coding round but I was only asked one coding problem. It was a version of a problem the interviewer had worked on in MMT. It was based on find all possible combinations pattern.
+
+https://leetcode.com/problems/subrectangle-queries/
+https://leetcode.com/problems/max-points-on-a-line/
+https://leetcode.com/problems/lru-cache/
+Difference between Comparator and Comparable.
+Why Java Interfaces Cannot Have Constructor But Abstract Classes Can Have?
+https://www.geeksforgeeks.org/makemytrip-interview-experience/
+https://www.geeksforgeeks.org/makemytrip-interview-experience-2019-2/
+https://github.com/realabbas/big-companies-interview-questions/blob/master/companies/makemytrip/makemytrip.md
+https://www.codingninjas.com/codestudio/interview-bundle/makemytrip
+Best Time to Buy and Sell Stock
+https://www.codingninjas.com/codestudio/interview-experiences/makemytrip/interview-experience-by-aditya-sharma-jan-2022-exp-0-2-years
+https://www.codingninjas.com/codestudio/interview-experiences/makemytrip/interview-experience-by-saurabh-kumar-toni-may-2022-exp-0-2-years
+https://arpitconnect.medium.com/makemytrip-interview-experience-fte-b189799bbeb5
+https://prepfully.com/interview-questions/makemytrip/software-engineer?page=3
+
+ Q1. Design and write an OOP based code with ER diagram for an elevator management based system.
+ - I didn't have any idea how to do it, and I told him clearly about this, and that's when he said that I should have another discussion with him after 6 months.
+ i.e he was basically rejecting me on the spot (only 15mins had passed since the interview started).
+ 
+ Q2. Asked me some OOPS questions on Polymorphism. 
+ Wanted in - depth explaination of Runtime Polymophism. 
+ Also asked why an Abstract Class can't have an object. 

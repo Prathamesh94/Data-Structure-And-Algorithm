@@ -33,7 +33,7 @@
                 pre.right = null
                 inorder.push(curr.val)
                 curr = curr.right
-            }
+            }   
         }
 
     }

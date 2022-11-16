@@ -1,7 +1,1 @@
-TODO Assignment:Implement other command after that attend next class.
-https://github.com/Naman-Bhalla/splitwise_feb22
-
-Flow:
-Client - > Register command
-User -> Client - > command service -> DTO -> Controller -> Actual Logical Service -> repositry to save data to databases
-Reasoning for each component
+z

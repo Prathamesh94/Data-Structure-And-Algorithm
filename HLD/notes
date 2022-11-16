@@ -1,5 +1,7 @@
 
+
 Steps for HLD:
+Time to cover HLDD?
 1. MVP(Minimum Viable Product):
     Mini requirement
     Extended Required
@@ -16,11 +18,12 @@ Steps for HLD:
     Low latency?
     Availbility?
 
-4. API design
+4. API design/Microservices
     postorder
     getTimeLine
+5. Data Model
 
-5. Actual Design Implementation
+6. Actual Design Implementation
     HLD -> Detailed template for interview
         Explain tradeoff at each decision
         1.Client
@@ -151,6 +154,9 @@ Rest API
 gRPC
 Event Driven system
 
+Status:Heart Beat
+Fanout problem
+
 
 Microservices/Monolith
 
@@ -169,3 +175,12 @@ case study 3
 elastic case study
 
 March 21 Intermidiate
+
+
+FB Messenger:
+https://developers.facebook.com/videos/f8-2016/a-look-at-whatsapp-engineering-for-success-at-scale/
+http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html
+https://www.youtube.com/watch?v=gzIcGhJC8hA
+
+
+
