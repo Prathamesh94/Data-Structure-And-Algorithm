@@ -17,12 +17,18 @@ Time to cover HLDD?
     Consistency?
     Low latency?
     Availbility?
+    Scalable?
+    Fault Tolerance
 
 4. API design/Microservices
     postorder
     getTimeLine
 5. Data Model
-
+    SQL vs NoSQL
+        Sclability
+        Structure
+        Nature Centraized/Decentralized
+        Property-ACID
 6. Actual Design Implementation
     HLD -> Detailed template for interview
         Explain tradeoff at each decision
@@ -43,51 +49,32 @@ Time to cover HLDD?
 1000*1000*1000Bytes - 1000*1000KB-1000MB- 1GB
 1000*1000*1000*1000bytes - 1000*1000*1000KB-1000*1000MB-1000GB- 1TB
 
-Case Studies:
 
 
-ELK:https://medium.com/dataseries/elk-stack-architecture-deep-dive-41168732f0e3
-
-Elastic Search Links:
-
-https://www.elastic.co/blog/found-elasticsearch-top-down
-
-https://www.elastic.co/blog/found-uses-of-elasticsearch
-
-https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up
-
-Google Search Engine
-Twitter/Instagram
-HIGH LEVEL DESIGN OF INSTAGRAM
-Trading System
-Hotstar
-IRCTC
-Mastering Chaos - A Netflix Guide to Microservices:https://www.youtube.com/watch?v=CZ3wIuvmHeM
-Hyper-threading? Context switching time? 
-Ride sharing app
-Food Delivery App
-Social Media App
-Uber Mysql as distributed system
-LEARN THE HIGH-LEVEL DESIGN OF QUORA
-LEARN THE HIGH-LEVEL DESIGN BEHIND LINKEDIN AND ITS FEED
-ONLINE TICKET BOOKING APPS
-LEARN THE SYSTEM DESIGN OF APPS LIKE FB MESSENGER & SLACK
-LEARN HOW OTT PLATFORMS LIKE NETFLIX USE DATA SCIENCE TO DECIDE THEIR PRICING MODEL
-DESIGN OF VIDEO STREAMING APPS
-DESIGN OF A MESSAGING APP
-SYSTEM DESIGN OF E-COMMERCE PLATFORMS THAT SCALE TO MILLIONS
-SYSTEM DESIGN OF A NOTIFICATION ENGINE LIKE AWS SNS
-EXPLORE THE HIGH-LEVEL DESIGN OF APPS LIKE NETFLIX
-HOW DO OTT PLATFORMS SCALE TO 200M+ CONCURRENT USERS?
-IMPORTANCE OF PROJECT BUILDING IN INTERVIEWS-C
-INTRODUCTION TO DOCKERS & CONTAINERISATION
 
 
- CRACKING THE BEHAVIOURAL INTERVIEW FOR ENGINEERS
- INDIVIDUAL CONTRIBUTOR TO ENGINEERING MANAGER: YOUR CAREER BREAKTHROUGH
+Design Diagram:
+Notification Service:https://github.com/codekarle/system-design/blob/master/system-design-prep-material/architecture-diagrams/Notification%20Service%20design.png
 
 
 Revision:
+
+NoSQL:
+Key VAlue
+Document DB: MongoDB
+Columnar DB: Cassandra
+GraphDB - Neo4J
+
+Cache mechanism:
+Write Through Cache:Write to Cache and DB both
+
+Write Around Cache: Only DB write
+    Ecommerce Website OMS.
+
+
+Write Back -> Only Cache write and async db write no response required
+    IOT data 
+
 DNS:https://howdns.works/ep1/
 Consitent Hashing: https://medium.com/system-design-blog/consistent-hashing-b9134c8a9062
 Caching
@@ -182,5 +169,148 @@ https://developers.facebook.com/videos/f8-2016/a-look-at-whatsapp-engineering-fo
 http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html
 https://www.youtube.com/watch?v=gzIcGhJC8hA
 
+Case Studies:
 
 
+ELK:https://medium.com/dataseries/elk-stack-architecture-deep-dive-41168732f0e3
+
+Elastic Search Links:
+
+https://www.elastic.co/blog/found-elasticsearch-top-down
+
+https://www.elastic.co/blog/found-uses-of-elasticsearch
+
+https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up
+
+Google Search Engine
+Twitter/Instagram
+HIGH LEVEL DESIGN OF INSTAGRAM
+Trading System
+Hotstar
+IRCTC
+Mastering Chaos - A Netflix Guide to Microservices:https://www.youtube.com/watch?v=CZ3wIuvmHeM
+Hyper-threading? Context switching time? 
+Ride sharing app
+Food Delivery App
+Social Media App
+Uber Mysql as distributed system
+LEARN THE HIGH-LEVEL DESIGN OF QUORA
+LEARN THE HIGH-LEVEL DESIGN BEHIND LINKEDIN AND ITS FEED
+ONLINE TICKET BOOKING APPS
+LEARN THE SYSTEM DESIGN OF APPS LIKE FB MESSENGER & SLACK
+LEARN HOW OTT PLATFORMS LIKE NETFLIX USE DATA SCIENCE TO DECIDE THEIR PRICING MODEL
+DESIGN OF VIDEO STREAMING APPS
+DESIGN OF A MESSAGING APP
+SYSTEM DESIGN OF E-COMMERCE PLATFORMS THAT SCALE TO MILLIONS
+SYSTEM DESIGN OF A NOTIFICATION ENGINE LIKE AWS SNS
+EXPLORE THE HIGH-LEVEL DESIGN OF APPS LIKE NETFLIX
+HOW DO OTT PLATFORMS SCALE TO 200M+ CONCURRENT USERS?
+IMPORTANCE OF PROJECT BUILDING IN INTERVIEWS-C
+INTRODUCTION TO DOCKERS & CONTAINERISATION
+ CRACKING THE BEHAVIOURAL INTERVIEW FOR ENGINEERS
+ INDIVIDUAL CONTRIBUTOR TO ENGINEERING MANAGER: YOUR CAREER BREAKTHROUGH
+
+
+
+
+ Facebook Messenger: https://medium.com/codex/designing-facebook-messenger-57152a668756
+ DropBox :           https://medium.com/codex/design-dropbox-e82b61e5b197
+ PASTEBIN:           https://medium.com/codex/designing-pastebin-77e6e86172eb
+ INSTAGRAM:          https://medium.com/codex/design-instagram-6872b41f5c61 -> to revised news feed
+ URL Shortner:       https://medium.com/codex/url-shorteners-f38e87ab821f
+ AIR BNB:            https://www.codekarle.com/system-design/Airbnb-system-design.html
+
+
+Company Blogs:http://dancres.github.io/Pages/
+ Software Architecture & System Design : https://medium.com/@olgamitroshyna/software-architecture-i-wish-i-had-known-about-this-earlier-4df43eae57db
+
+ https://blog.pramp.com/how-to-succeed-in-a-system-design-interview-27b35de0df26
+
+
+ Why KAFKA???
+ Link:https://aws.amazon.com/msk/what-is-kafka/#:~:text=Why%20would%20you%20use%20Kafka,that%20consumes%20streams%20of%20data.
+
+Kafka uses a partitioned log model, which combines messaging queue and publish subscribe approaches.
+
+Scalable
+Kafka’s partitioned log model allows data to be distributed across multiple servers, making it scalable beyond what would fit on a single server. Kafka provides scalability by allowing partitions to be distributed across different servers.
+
+Fast
+Kafka decouples data streams so there is very low latency, making it extremely fast. 
+
+Durable
+Partitions are distributed and replicated across many servers, and the data is all written to disk. This helps protect against server failure, making the data very fault-tolerant and durable. 
+
+Message Retention:Policy based, for example messages may be stored for one day. The user can configure this retention window.
+
+Multiple Consumer:Multiple consumers can subscribe to the same topic, because Kafka allows the same message to be replayed for a given window of time.
+
+Replication:Topics are automatically replicated, but the user can manually configure topics to not be replicated.
+
+Message ordering:Each consumer receives information in order because of the partitioned log architecture.   
+
+Protocols:Kafka uses a binary protocol over TCP.
+
+
+
+Why NoSQL?
+Link:https://www.geeksforgeeks.org/top-5-reasons-to-choose-nosql/
+
+Multi-Model: no requirement to specify the schema 
+
+Easily Scalable: Horizontally scalable
+
+Distributed:   multiple locations involving multiple data centers vs centralized that is single location for write operations.
+
+Big Data Applications: NoSQL can handle the massive amount of data very quickly 
+
+Redundancy and Zero Downtime: NoSQL is also designed to handle these kinds of critical situations. Hardware failure is a serious concern while building an application.
+
+Why SQL?
+Transaction based system
+ACID
+not working with a large volume of data
+Community Support
+Vertical Scaling
+SQL is a mature technology
+complex queries
+Postgres vs Mysql -> JSON support in Postgres
+
+
+Which Database and why?
+Structure of data
+Data access pattern
+Scale of traffic
+scale of data
+Blob storage/S3 of file/video/files
+CDN for fast delivery of blob data
+
+Elastic Search/solar for text search engine/fuzzy search of product/search address in uber
+Elastic Search/solar both are based on apache lucine
+No durability/reliability provided by Elastic search/solar so cannot be used as primary db
+
+Timeseries data: Open TBSB
+
+Dataware house:Hadoop
+
+
+
+Why Zookeeper?
+https://www.cloudkarafka.com/blog/cloudkarafka-what-is-zookeeper.html
+
+
+Distributed config management
+Leader SElection
+Coordination and locks
+Key value store
+
+zNodes
+each nzode has a Path
+each znode can store data
+No renaming of zNode
+zNode can we watched for changes and if any changes zookeeper notify the consumer
+
+Very Stable
+
+Replication mode
+consistency guranteed

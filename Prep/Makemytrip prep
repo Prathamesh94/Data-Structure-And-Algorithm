@@ -151,28 +151,36 @@ SOLID
 DSA
 
 
-https://leetcode.com/problems/unique-paths/ 
-This was meant to be a LLD + Coding round but I was only asked one coding problem. It was a version of a problem the interviewer had worked on in MMT. It was based on find all possible combinations pattern.
-
-https://leetcode.com/problems/subrectangle-queries/
-https://leetcode.com/problems/max-points-on-a-line/
-https://leetcode.com/problems/lru-cache/
-Difference between Comparator and Comparable.
-Why Java Interfaces Cannot Have Constructor But Abstract Classes Can Have?
-https://www.geeksforgeeks.org/makemytrip-interview-experience/
-https://www.geeksforgeeks.org/makemytrip-interview-experience-2019-2/
 https://github.com/realabbas/big-companies-interview-questions/blob/master/companies/makemytrip/makemytrip.md
-https://www.codingninjas.com/codestudio/interview-bundle/makemytrip
-Best Time to Buy and Sell Stock
-https://www.codingninjas.com/codestudio/interview-experiences/makemytrip/interview-experience-by-aditya-sharma-jan-2022-exp-0-2-years
-https://www.codingninjas.com/codestudio/interview-experiences/makemytrip/interview-experience-by-saurabh-kumar-toni-may-2022-exp-0-2-years
+https://www.geeksforgeeks.org/makemytrip-interview-experience-2019-2/-Done
+https://www.geeksforgeeks.org/makemytrip-interview-experience/ -Done
+https://leetcode.com/problems/unique-paths/ -> Done
+This was meant to be a LLD + Coding round but I was only asked one coding problem. It was a version of a problem the interviewer had worked on in MMT. It was based on find all possible combinations pattern.
+Difference between Comparator and Comparable.-Done
+Why Java Interfaces Cannot Have Constructor But Abstract Classes Can Have? -> done
+Best Time to Buy and Sell Stock -Done
+Kth largest element -> Done
+https://leetcode.com/problems/subrectangle-queries/-> Done
+ Q1. Design and write an OOP based code with ER diagram for an elevator management based system.
+
+ Q2. Asked me some OOPS questions on Polymorphism.  ->Done
+ Wanted in - depth explaination of Runtime Polymophism. 
+ Also asked why an Abstract Class can't have an object -> Done
+ https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/description/Next Greater Element - I
+
+
+Next Greater Element - I
+https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
+https://leetcode.com/problems/minimum-window-substring
+https://leetcode.com/problems/max-points-on-a-line/
+https://leetcode.com/problems/lru-cache/. 
+
+ managing a parking lot
+
+Deletion In Circular Linked List
+
+https://www.codingninjas.com/codestudio/problems/remove-k-digits_1461221
+
 https://arpitconnect.medium.com/makemytrip-interview-experience-fte-b189799bbeb5
 https://prepfully.com/interview-questions/makemytrip/software-engineer?page=3
 
- Q1. Design and write an OOP based code with ER diagram for an elevator management based system.
- - I didn't have any idea how to do it, and I told him clearly about this, and that's when he said that I should have another discussion with him after 6 months.
- i.e he was basically rejecting me on the spot (only 15mins had passed since the interview started).
- 
- Q2. Asked me some OOPS questions on Polymorphism. 
- Wanted in - depth explaination of Runtime Polymophism. 
- Also asked why an Abstract Class can't have an object. 

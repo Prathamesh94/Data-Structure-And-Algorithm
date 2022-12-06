@@ -8,7 +8,26 @@
 //Insert     element in Heap
 //TC : O(logn)
 //SC : O(1)
+function heapify(arr,n,i){
 
+    let largest = i
+    let l = 2*i+1
+    let r = 2*i+2
+    if(l<n && arr[l] > arr[largest]){
+        largest =l
+    }
+
+    if(r<n && arr[r] > arr[largest]){
+        largest =r
+    }
+
+    if(largest != i){
+        let swap = arr[i]
+        arr[i] = arr[largest]
+        arr[largest] = swap
+        heapify(arr,n,largest)
+    }
+}
 function buildHeap(arr){
     let n = arr.length
 
@@ -16,6 +35,33 @@ function buildHeap(arr){
         heapify(arr,n,i)
     }
 }
+/**
+ * 
+ * 
+ * Heapify:
+ * Pre requistes:
+ * 1.Tree should be Balanced Binary Tree
+ * 
+ * How tree is represented in array
+ * 
+ * 1. First element is root element
+ * 2. 2*i+1 is left node
+ * 3. 2*i+2 is right node
+ * 4. No. of Nodes in last level is equal to all element in other levels
+ * 
+ * 5. Start heapify from (n/2)-1 i.e from second last level and then upper levels one by one(Refer Heapify Function)
+ * 
+ * For Max Heap
+ * 6.Child nodes should be less than parent node so swap if child is greater than parent.
+ * 
+ * Delete Node
+ * 7. Delete root node and add last node of to first and then pop last element
+ * 8. Perform heapify from first node i.e heapify(arr,n,0)
+ * 
+ * 
+ * 
+ * 
+ */
 
 function deleteNode(arr){
     let n = arr.length
@@ -95,23 +141,3 @@ function iteratorHeapify(arr,n,i){
 }
 
 
-function heapify(arr,n,i){
-
-    let largest = i
-    let l = 2*i+1
-    let r = 2*i+2
-    if(l<n && arr[l] > arr[largest]){
-        largest =l
-    }
-
-    if(r<n && arr[r] > arr[largest]){
-        largest =r
-    }
-
-    if(largest != i){
-        let swap = arr[i]
-        arr[i] = arr[largest]
-        arr[largest] = swap
-        heapify(arr,n,largest)
-    }
-}

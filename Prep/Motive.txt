@@ -1,0 +1,318 @@
+
+
+
+
+What You’ll Do
+Build and scale data models and improve system performance.
+Build and make scalable design choices for API interfaces to work across internal and external applications and services.
+Ability to quickly learn billing/payment related third party integration like stripe or adyen.
+Building software that improves the cost of running a service in production, reduces iteration time and helps you and the team make better decisions about how and what we build and try next.
+Build appropriate monitoring, logging, debugging for the health of the system.
+Communicate effectively across multiple teams and projects.
+Actively work on our AWS cloud infrastructure
+Mentor and learn from the developers within the engineering organization
+
+
+What We’re Looking For
+B.S. or M.S. in Computer Science or related field
+8+ years software development experience
+Experience building product infrastructure, distributed systems and data models
+Experience in Ruby on Rails, Go Lang, Java, Javascript/Node.js or similar language
+Experience with relational and NoSQL databases such as PostgreSQL, DynamoDB, Redis, and Cassandra
+Experience building for Cloud Infrastructure such as AWS, GCP, Azure or private clouds
+
+
+
+Questions:
+Technical Round 1 -
+
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+https://leetcode.com/problems/reverse-linked-list/ (recursively and iteratively)
+Working code was expected
+Hiring Manager -
+Asked about projects, deep dive into one project, some behavioural questions, etc.
+
+Technical Round 3 -
+
+https://leetcode.com/problems/restore-ip-addresses/
+Working code was expected, couldn't come up with the solution at first, interviewer gave hints but couldn't code in remaining time
+Technical Round 4 -
+
+Column wise print the array of arrays
+https://leetcode.com/problems/search-in-rotated-sorted-array/
+Working code was expected.
+
+https://algodaily.com/companies/keeptruckin
+
+Round 1
+
+Eval expression code
+
+----------------------
+// Search for x in a sorted array that has been rotated at some unknown pivot. There are no duplicates. If x is not found return -1.
+
+
+// [4,5,6,7,0,1,2]
+// x = 1
+// return 4
+
+//x=3
+
+//4,5,6,7 ,0,1,2
+
+//x > 1st element 
+
+//L=0
+//h = 6
+//mid=3
+//if !(mid < mid+1) and x < 1st element low = mid+1
+//else h = mid -1
+
+//low = 4
+//h =6
+
+
+// [4,5,6,7,0,1,2]
+// x = 3
+// return: -1
+
+
+console.log('Hello world');
+let input = [4,5,6,7,0,1,2]
+//console.log(findElementInRotatedArr(input,3))
+let input1 = [3,4,5,6,0,1,2]
+//console.log(findElementInRotatedArr(input1,3))
+let input2 = [2,4,6,7,8,0,1]
+input2 = [4,5,6,7,0,1,2]
+
+//[1,0,8,7,6,5,4,3,2]
+
+
+for(elem of input2){
+    console.log(findElementInRotatedArr(input2,elem))
+}
+
+//let input3 = [3,4,5,6,0,1,2]
+//console.log(findElementInRotatedArr(input1,3))
+
+
+
+
+function findElementInRotatedArr(arr,x){
+    
+    
+    
+    //console.log("Input",arr,x)
+    let n = arr.length
+    if(n ==0) return -1
+    let low =0
+    let high = n
+    let firstElem = arr[0]
+    while(low <= high){
+        
+        let mid = Math.floor((low+high)/2)
+        if(arr[mid] == x) return mid
+        if(checkPivot(arr,mid) && x <firstElem){ //Pivot Condition to update low
+            low = mid+1
+        }else if(checkPivot(arr,mid)){//Pivot Condition to update high 
+            high = mid-1
+        }else if (arr[low] < arr[high] && arr[mid] < x){ 
+            low = mid+1
+        }else if (arr[low] < arr[high]){
+            high = mid-1
+        }else{
+            if(arr[low] == x) return low
+            low += 1
+        }
+        
+    }    
+    return -1
+}
+
+function updateHighLowBS(){
+    let low = 0
+    let high = arr.length-1
+    if(arr[low] > arr[high]){
+        //Ascending
+        if(arr[mid] > arr[mid+1]){
+            return true
+        }
+    }else{
+        //decending
+        if(arr[mid] < arr[mid+1]){
+            return true
+        }
+    }
+    
+}
+function checkPivot(arr,mid){
+    let low = 0
+    let high = arr.length-1
+    if(arr[low] > arr[high]){
+        //Ascending
+        if(arr[mid] > arr[mid+1]){
+            return true
+        }
+    }else{
+        //decending
+        if(arr[mid] < arr[mid+1]){
+            return true
+        }
+    }
+    return false
+    
+}
+
+
+// [1,0,8,7,6,5,4,3,2]
+
+// [2,4,6,7,8,0,1]
+
+// [10,12,0,2,4,5,6,8]
+
+// [8,7,6,5,4,3,12,11]
+
+// [0,1,2,3,4,5]
+
+// [5,4,3,2]
+
+
+First two round would be coding interview, leetcode medium u can expect
+and 3rd round would be real life coding challenge
+
+
+U will be given some public dataset and u will be asked to design/build an API 
+which should read the public data set and performance some additional operation and return the response to client. U have to code in front of interviewers.
+
+In this round u will be judged on ur coding skills, code modularity, proper api error and api response handling, architecture of APIs folders , files and all such stuff.
+Interviewer might ask u to scale the api to millions of customer, db schema and concurrency and all such stuff.
+
+4th would be managerial/behaviour round
+Last HR discussions
+
+Code Structure
+
+DataBase layer(Sequilize and direct connection)
+Code modularity
+Request/Response/Error
+Test Framework-Unit Testing (Mocha/chai)
+API testing using supertest
+
+DB schema
+
+
+Concurrency and Locks in nodejs
+Request and response Interfaces
+
+
+Postman is ready
+DB is ready
+
+
+https://techwithkp.com/machine-coding-round-what-is-it-how-to-crack-it/
+https://github.com/prasadgujar/low-level-design-primer/blob/master/solutions.md
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1.request response error interface in nodejs quick read
+https://blog.heroku.com/best-practices-nodejs-errors
+https://www.interviewbit.com/node-js-interview-questions/
+
+2.Learn creating user in DB and provide access
+
+ CREATE USER 'realworlduser'@'localhost' IDENTIFIED BY 'realworldpass';
+ GRANT ALL PRIVILEGES ON realworlddb.* TO 'realworlduser'@'localhost' WITH GRANT OPTION;
+ FLUSH PRIVILEGES;
+
+
+3.Create handy code snippets links and command list
+
+express app server:https://expressjs.com/en/4x/api.html#express.urlencoded
+http request:https://axios-http.com/docs/req_config
+db layer: https://sequelize.org/
+test case and mocha and super test:https://mochajs.org/#assertions
+
+
+
+4.sql queries
+
+
+5.code modularity quick read
+6.test cases structuring quick read
+
+
+7.sample project end to end
+
+
+DB Query
+Sequelize
+HTTP Call
+Error Handling
+Debug code using debugger
+
+
+8.Design Pattern in typescript
+
+9. Knowledge of Framework and library and test framework
+
+modules to be familar with
+express
+axois
+mysql
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+The code/ application should be executable. This is the most important expectation in a machine coding round.
+The code should fulfill all the requirements mentioned by the interviewer.
+The system/ code should be modular and easy to understand.
+Your code should follow object-oriented principles.
+Use a design pattern if possible.
+The code should be easily extensible, which means it should be designed to allow the addition of new capabilities or functionality.
+Don’t dump all the code in one class. You should have different classes for different purposes. Follow the single responsibility principle.
+You will need to write a driver method or a driver class which will drive the entire flow. A class that has the main method and from where methods of other classes are called is known as a driver class.
+You should be able to explain what you have written to the interviewer in a simple and concise manner.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Real world problem interview:
+/*
+1. Write a method to find all the models for a given year from this API
+https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/honda/modelyear/2016?format=json
+
+2. Write a method to find all the models that are discontinued by Honda in the last 10 yrs. 
+    - What is discontinued? Any model that is not sold for more than 2 recent years. 
+       For example: From 2011 to 2020, a model should not be sold in 2019 and 2020
+    1981
+    models that were sold in last 8 years - models sold in last 2 years
+    2011 to 2018 - 2019 to 2020
+    2018 2019 2020
+     sold in 2018
+    
+    2009 1 2 3 5
+    2011 
+    2018 
+    2019
+    2020
+    
+    
+
+3. Build an API to expose all the different methods
+- /load_data
+- /discontinued_vehicles 
+{
+    "year":2015
+}
+
+4. Bonus: Concurrent/parallel calls
+*/
+
+/*
+APIs:
+- /load_data
+- 
+- /discontinued_vehicles
+
+*/

@@ -5,6 +5,7 @@ https://www.scarletink.com/interviewing-at-amazon-leadership-principles/
 Deployment/build failures and observation
 Focus on Urgent Important/Important Not Urgent 
 Not on Urgent Not Important
+
 The categories:
 
 Data:
@@ -93,4 +94,50 @@ Resource crisis team reduced from 10 developers to 4
 
 *A time when you resolved a group conflict.
 Resolved conflict between manager and team mate keshav
+
+
+Challenging problems:
+
+RPOS security loop hole
+Production issue for getwidget API backend was taking time and it was failing
+Migration from vendor to open source
+
+
+
+Introduction:
+
+I have grow in jio from taking ownersjip of a single task,feature,product,track B2C segment.
+mentorship
+best practices and systems to deliver quality deliverable
+also act SME in team to solve any design/programing/production issue.
+
+
+Strength:Responsibility,Ownership,Problem Solving,Team Player,Never giving up character,Sportsmenship,Leadership
+Weakness:Taking too many task -> Delegate work
+
+Situation: Jio Fiber Launch and OTT Integeration in 2-3 weeks
+
+Situation:Too many meetings to OTT partners for integration, worked as product manager to discuss integration with OTT partner  and devops engineer also to.
+
+Situation: Asynchronous Netflix transaction handling and retries
+
+Situation: Worked on secuirty of ZLA API and added few more checks to make it secure.
+
+Situation:jiomart microservice scaling
+
+Situation:Migration from vendor to opensource
+
+
+Situtation XSLT transformation
+
+Situation: Low level Design of .env create muultiple .env
+
+Tradeoff discussion:
+Docker vs kubernetes
+Maintaince of .env for each env
+
+
+
+Situtaion: Resolved manager and team member conflict
+
 

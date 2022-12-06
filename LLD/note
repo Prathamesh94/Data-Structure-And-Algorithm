@@ -8,7 +8,7 @@
  3. Final List of features
  4. Use case diagram(Activity Diagram)
  5. Identify Entities
- 6. Create class diagram
+ 6. Create class diagram/ER Diagram
  7. Possible Design patterns to be used
 
 ----------------------------------------------------------------
@@ -56,6 +56,8 @@ Design Patterns-
 ----------------------------------------------------------------
 
 Revision:
+
+https://workat.tech/
 Functional programming:https://www.tutorialspoint.com/functional_programming/functional_programming_introduction.htm
 JAVA Concurrency:https://jenkov.com/tutorials/java-concurrency/index.html
 HTTP Standards: https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/

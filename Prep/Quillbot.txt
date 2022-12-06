@@ -1,0 +1,78 @@
+/*Find the starting and ending index of largest substring with equal number of 'A' and 'B'.
+
+Input: ABAAABB
+Output: 1 to 6
+
+Input: AAAA
+Output: Not available
+
+Input: BBAAB
+Output: 0 to 3 or 1 to 4*/
+
+//BABAAAB
+// A-4 B-3
+//L=0 H = n-1
+//
+
+let input = "ABAAABB"
+console.log(getLargestSubstring(input))
+let input1 = "AAAA"
+console.log(getLargestSubstring(input1))
+let input2 = "BBAAB"
+console.log(getLargestSubstring(input2))
+
+
+function getLargestSubstring(input){
+  let n = input.length
+  let map = countCharacter(input,n)
+  let maxLength = findLargestSubstring(map,input)
+  return maxLength
+}
+
+function findLargestSubstring(map,string){
+  let low = 0
+  let high = string.length-1
+  let aCounter = map.get("A")
+  let bCounter = map.get("B")
+  
+  while(low < high){
+    //console.log(//)
+    if(aCounter == bCounter) return [low,high]
+    if(aCounter > bCounter && string[low] == "A"){
+      aCounter -= 1
+      low += 1
+    }else if(aCounter > bCounter && string[high] == "A") {
+      aCounter -= 1
+      high -=1
+    } else if(bCounter > aCounter && string[low] == "B"){
+      bCounter -= 1
+      low += 1
+    } else if(bCounter > aCounter && string[high] == "B"){
+      bCounter -= 1
+      high -= 1
+    }else{
+      if(string[low] == "A"){
+        aCounter -= 1
+      }else{
+        bCounter -= 1
+      }
+      low += 1
+    }
+  }
+  return -1
+}
+
+function countCharacter(string,n){
+  let map = new Map()
+
+  for(char of string){
+    if(map.has(char)){
+      map.set(char,map.get(char)+1)
+    }else{
+      map.set(char,1)
+    }
+  }
+  return map
+}
+
+

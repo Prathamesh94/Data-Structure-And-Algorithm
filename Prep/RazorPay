@@ -1,0 +1,134 @@
+4 HLD Diagram
+    Messenger
+    IRCTC
+    Notification Service
+    Payment Gateway
+
+HLD
+    Functional Requirement
+    Non Functional Requirement
+    CAP/Read-Write Heavy
+    APIs
+    Data model
+    Actual Design
+    security,infra,application monitoring
+
+
+Design Notification System(High-level design). The design should include all notifications like Push Notifications, SMS, Webhooks, Email, etc. Also, identify bottlenecks & how would you solve them.
+
+Q1. System Design
+System Design Round where I had to design an LRU Cache right from Scratch.
+
+Q1. System Design Question
+Design and code a Document service which have the following features - 1. User can create new document.2. One user can invite other users to edit the document3. Invited user cannot delete the document other user has created.4. Invited user can only edit if he has the permission to do so.
+
+https://medium.com/hootsuite-engineering/a-scalable-reliable-webhook-dispatcher-powered-by-kafka-2dc3d677f16b
+https://leetcode.com/discuss/interview-question/2222463/Razorpay-oror-system-design-oror-Help
+https://leetcode.com/discuss/interview-question/1105693/Interview-Experience-with-Razorpay
+
+Machine Coding Round
+    Low Level Design with actual application implementation
+    Modular
+    Loosely Coupled Code
+
+Q1. System Design Question
+Design and implement an In-Memory SQL based database with insert, get and filter
+https://leetcode.com/discuss/interview-question/1630474/Razorpay-or-Machine-Coding-Round-or-Document-Service-Design
+LLD of a load balancer
+design a in memory sql database''
+Design a system to handle semi structure to structure data, how to utilize data lake, handle unclean data from source, tackle pipeline failure, data warehouse optimization techniques, identifying error query in a warehouse  
+
+
+Machine Coding Round
+
+Design Round with Staff/Principal engineer
+    Design discussion on existing system at Jio 
+    Pros and Cons of existing system at Jio
+
+
+Hiring Manager Round
+    Project and journey so far
+
+
+lindebanshur
+
+
+Design a TinyURL Service
+
+Requirement:
+
+Short URL
+Generate URL
+Update Short URL
+Delete Short URL
+Expiry of url
+custom url
+Redirection
+
+
+NFR:
+
+No of shortURL to be stored
+    No of url created for specific day = 1000
+    yearly = 1000*365*5  = 100*2000*1000 = 200MB
+
+
+Read Heavy System
+100*1000 = 100000 = 100000/100000 = 2QPS
+
+
+
+High Availability
+Low Latency
+
+API:
+
+POST /v1/url
+    shortURL
+    expiry
+    
+GET  /v1/url/:id
+PUT  /v1/url/:id
+    
+DELETE /v1/url/:id
+
+PATCH /v1/url/:id
+
+id:u.yl/abc  -> https://www.scaler.com/hire
+    
+    region specific
+    
+u.yl/SCALER  -> scaler.com
+    
+abc    :sadsad
+abc.com:sadsad
+
+
+Data schema:
+
+shorturl
+id
+shorturl : index
+apikey:
+longurl:
+encode: base32
+expiry
+createdDate:
+status     :enabled/disabled
+
+user:
+id
+name
+role
+
+
+    client ---> NAT ---> ALB ---> url service --> LB --> Cache  ->  DB
+                                                       
+                          
+
+
+
+
+
+
+

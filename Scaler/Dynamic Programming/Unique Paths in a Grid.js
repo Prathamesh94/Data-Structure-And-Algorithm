@@ -1,35 +1,35 @@
-module.exports = { 
-    //param A : array of array of integers
-    //return an integer
-       uniquePathsWithObstacles : function(A){
-   
-           let n = A.length
-           let m = A[0].length
-           let dp = new Array(n).fill().map(()=>{return new Array(m).fill(-1)})
-           //dp[0][0] = 1
+/**
+ * https://leetcode.com/problems/unique-paths/description/
+ * @param {number} m
+ * @param {number} n
+ * @return {number}
+ */
+ var uniquePathsTopDown = function(m, n) {
+    let dp = new Array(m).fill().map(elem => new Array(n).fill(1))
+    return possiblePath(0,0)
+    function possiblePath(i,j){
         
-           return findPath(0,0)
-           function findPath(row,col){
-               if(row >= n || col >=m){
-                   return 0
-               }
-               if (A[row][col] == 1) return 0
-               if(row == n-1 && col == m-1){
-                   return 1
-               }
-               
-              
-               
-   
-               if(dp[row][col] != -1){
-                   return dp[row][col]
-               }
-   
-               dp[row][col] = findPath(row+1,col)+findPath(row,col+1)
-   
-               return dp[row][col]
-   
-           }
-       }
-   };
-   
+        if(i == m-1 && j == n-1) return 1
+
+        if(i > m-1 || j > n-1){
+            return 0
+        }
+        if(dp[i][j] != -1) return dp[i][j]
+        dp[i][j] = possiblePath(i+1,j)+possiblePath(i,j+1)
+        return  dp[i][j]
+    }
+    
+};
+
+var uniquePaths = function(m, n) {
+    let dp = new Array(m).fill().map(elem => new Array(n).fill(1))
+
+
+    for(let i=1;i<m;i++){
+        for(let j=1;j<n;j++){
+            dp[i][j] = dp[i-1][j] + dp[i][j-1]
+        }
+    }
+    return dp[m-1][n-1]
+    
+};
