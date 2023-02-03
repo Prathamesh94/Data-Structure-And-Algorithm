@@ -1,0 +1,96 @@
+Round 1:
+Duration: 60mins
+Was interviewed by an external agency.
+
+Questions asked:
+https://leetcode.com/problems/find-eventual-safe-states/
+https://leetcode.com/problems/maximal-square/
+----------------
+Scheduled next rounds after clearing this.
+
+1.Tickerlson problem - Given an array of integers with size N . A operation is defined as : Choose any indexes of array , say x and y (0<=x <=y <=N-1) and inverting all the elements between them ( basically making arr[i] as -arr[i] ) . We can do this operation at most two times .We have to evaluate maximum subarray sum . Example - [2 , -19 ,-1,3,-39,-1,5,-2] operation on (1,2) and (4,5) gives maximum subaray sum as 70.
+
+2.This problem was realted to n-ary tree . min time required to pass information to all nodes from root node. (can be found on gfg).
+
+3.We are given a map with n cities and n-1 roads ,each road connecting two cities bidirectionally . Each city is either infected or not . Infection-spread is defined as absolute difference between no of infected and non-infected cities . We want to cut out a submap of cities with maximum infection-spread .
+
+Can anyone help me in first and third question?
+
+--------------
+1st Round
+Question asked was from LeetCode itself.
+1. number of islands
+2. Unique BST 2
+
+Had to solve both questions completely in an hour.
+
+2nd Round
+It was an LLD round, Was asked to design BMS (BookMyShow).
+This was my first LLD round, glad to have an easy question for this.
+
+3rd Round
+Started with Project discussion.
+Had 30 min disucssion on that.
+Then moved ahead with Problem Solving.
+
+Was asked to design API, to search a bus based on source, Destination, Date.
+Also, to register bus along with iternary.
+Interviewer was not focused on using any framework as such.
+He was mostly concerned on problem solving and how we can optimize our approach.
+Later asked me to code it.
+I wrote the code, along with logging and exception handling. Taking care of naming conventions as well.
+
+---------------
+Round1. Coding- basic string question....given a string find its lexicographic order number ....eg - A = 1, Z = 26, AA = 27 etc, this round went well
+Round2. Coding - Median of two sorted arrays, basic pattern printing, the round went well
+
+Round3. Basic resume discussion - 1 hour discussion on past projects, the round went well
+
+Round4- Hight level design of trending tweets in twitter
+
+Round5- HM round, behaviour questions
+
+
+---------------------
+DSA Round (via some external agency) -
+2 LC Medium (Had to share my screen + submit in LC itself) - As I wasn't able to solve one, I got mixed feedback but HR still advanced me to the next round
+Problems -
+https://leetcode.com/problems/permutations/
+https://leetcode.com/problems/maximum-product-subarray/ (I had previously submitted this and solution showed up when I opened it, so skipped this)
+https://leetcode.com/problems/number-of-islands/
+
+LLD Round (via some external agency) - Parking Lot
+
+System Design -
+Detailed in depth discussion on a system in my resume
+Detailed in depth discussion on a system to design (Great interview and interviwer, went on for over 1.5hrs)
+
+LLD - LLD for a cards game (Hearts, I think)
+
+HM - Cultural fit + behavioural
+
+----------------------------------
+Round 1: DS/PS
+
+https://leetcode.com/problems/validate-binary-search-tree/
+https://leetcode.com/problems/find-the-celebrity/
+Round 2: Machine Coding
+https://leetcode.com/discuss/interview-question/295225/Design-bowling-alley
+
+Round 3: HLD
+Design trending topics on Twitter.
+
+Round 4:
+HM Round
+
+Why are you leaving your current organisation?
+Discussions regarding previous work
+Strengths
+Weaknesses
+Long term plan
+
+---------------------------------
+True False
+
+
+Graph island

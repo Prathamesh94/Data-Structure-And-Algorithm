@@ -1,0 +1,73 @@
+// write your code here...
+
+
+Requirement:
+
+Write Ahead System
+
+Provide suggestions for input typed by user
+Provide Frequent used word suggestions
+
+
+Non Function Requirement:
+
+
+
+Queries per day: 10M
+Queries per second: 10M / 100000 = 100 Request Per second
+No of entries in DB : 2M*365*5 => 4000M*10*700byte =>28 * 10^12 => 1PB
+
+Data ModeL:
+
+prefix:200Byte
+Tops10Suggestion:suggestid 50byte*10
+
+
+
+Design goals:
+Read/Write Heavy
+High Available
+Low Latency
+
+
+API Design:
+
+GET /suggestion?prefix=${input}
+        {"top10Suggestions":[]}
+POST /query
+    {
+        "query":""
+    }
+
+
+co :
+    covid : 120
+    coworker: 90
+    coordination :60
+
+cowsadasdas :180
+covid: 120000000000000/2
+
+covid count in india
+co 
+
+
+
+
+dsfklsdamglamsdf
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+

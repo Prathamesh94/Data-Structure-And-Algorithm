@@ -1,0 +1,15 @@
+
+Kadanes Algorithm
+    Max sum subarray
+Interval Question
+    Merge Interval
+Top Left and Bottom Right of 2D Matrix
+PrefixSum of Matrix - Row Prefix+Col Prefix
+    Sum of Matrix based on Query
+Find max submatrix sum:
+    Merge all rows into one row by taking prefix sum and apply kadanes
+Spiral Order Matrix II: left right top bottom 
+Sum of all submatrix:let times = (i + 1) * (j + 1) * (A.length - i) * (A.length - j);  
+
+Bit Manipulations - 1 -> last question watch video
+Bit Manipulations - 2 -> 3rd and 4th Question

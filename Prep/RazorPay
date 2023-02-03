@@ -34,7 +34,7 @@ Machine Coding Round
 Q1. System Design Question
 Design and implement an In-Memory SQL based database with insert, get and filter
 https://leetcode.com/discuss/interview-question/1630474/Razorpay-or-Machine-Coding-Round-or-Document-Service-Design
-LLD of a load balancer
+
 design a in memory sql database''
 Design a system to handle semi structure to structure data, how to utilize data lake, handle unclean data from source, tackle pipeline failure, data warehouse optimization techniques, identifying error query in a warehouse  
 
@@ -130,5 +130,105 @@ role
 
 
 
+LLD of a load balancer
+Razorpay | Machine Coding Round | Document Service Design
+https://leetcode.com/discuss/interview-question/1630474/razorpay-machine-coding-round-document-service-design
+Design Parking Lot
+Design Splitwise application
+https://github.com/prasadgujar/low-level-design-primer/blob/master/solutions.md
+https://techwithkp.com/machine-coding-round-what-is-it-how-to-crack-it/
+
+
+
+Design a notification service.
+
+Design an concurrent History tracking system where we can store and track history of registered entities. We should be able to onboard service and their entities to our system and start tracking changes being made to them.
+
+2- Design Authentication/Authorization Servic which supports(otp,OAuth, etc.)
+Approach- Same as HLD
+"Why Razorpay?",
+ "What will you do if you get a better offer than this?", 
+
+ 1-Design Trending Topic Service
+
+Approach-> Clarified The Requirements, Dicussed the overall approach, then designed DB, Provided Api skeleton With Request and Response. then connected all the dots by going process of each api. Creating Different Services as and when required by introducing speration of concern.
+
+Currect Project:
+
+Netflix - OTT
+Subscription Details
+Facebook on Kubernetes
+Migration of Transformation APIS
+
+
+Subscriber & TPA Migration and services
+MAG Implementation 
+
+OAuth implementation for Jiomart and TPA
+
+Design:
+
+
+Netflix - OTT
+Jiomart Microservices Architecture
+Mobile Connect-Three legged OAuth
+    Aggregators:Each aggregator will have multiple enterprise
+    Designed Three Legged OAuth Flow
+    /v2/users/me
+    /authorize
+    /v2/token
+Circuit Breaker for OID failover
+Netflix DNS server which made complete nodejs server down:
+RPOS Production issue: Resolved by reducing file size and offloading upload file api to nginx
+socket.iotimeout and high heap memory utlization
+
+Subscriber & TPA Migration and services - Scaled Process for subscribtion details due to high cpu
+    PT to support production load
+    Based on PT result started pm2 process in production
+
+    Requirement Gathering:
+        APIs in use
+        Traffic for each APIs
+        Understadning of Flow for each API
+
+
+Tech deep around
+Projects
+system design
+architecture
+
+
+Hiring Manager Round:
+
+HLD
+Project
+Behavioral
+
+Project and Journey so far:
+
+Software Engineer
+
+Jio Launch
+RPOS
+TPA
+DevOps
+Open Source Project
+
+Senior Software Engineer
+Facebook
+Kubernetes
+docker
+
+
+
+why razorpay ?
+
+UPI
+Razorpay
+Payment
+Banking
+Corporate CArds
+Payroll
+Credit card using UPI
 
 

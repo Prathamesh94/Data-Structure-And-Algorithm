@@ -6,6 +6,8 @@ Time to cover HLDD?
     Mini requirement
     Extended Required
 
+*Use Case Diagram
+
 2. Estimation of scale
     Storage
     QPS
@@ -18,17 +20,24 @@ Time to cover HLDD?
     Low latency?
     Availbility?
     Scalable?
-    Fault Tolerance
+    Fault Tolerance/Reliability?
+    Security
+    CAR + LS
+    Zero Down Time Deployments
 
 4. API design/Microservices
     postorder
     getTimeLine
+
+
 5. Data Model
     SQL vs NoSQL
         Sclability
         Structure
         Nature Centraized/Decentralized
         Property-ACID
+
+
 6. Actual Design Implementation
     HLD -> Detailed template for interview
         Explain tradeoff at each decision
@@ -40,18 +49,14 @@ Time to cover HLDD?
         6.Central Logging servers (Rsyslog)
         7.Infracture and Network Monitoring(Servers are up and running, CPU utlization RAM utilization)-Solar wind
         8.Logging and Monitoring and alerts(ELK and /AppD/Alert)
-        9.
         10.Security logging and monitoring
 
+7. Operations and SecOps
 
 1000 bytes - 1KB
 1000*1000Bytes - 1000KB - 1MB
 1000*1000*1000Bytes - 1000*1000KB-1000MB- 1GB
 1000*1000*1000*1000bytes - 1000*1000*1000KB-1000*1000MB-1000GB- 1TB
-
-
-
-
 
 Design Diagram:
 Notification Service:https://github.com/codekarle/system-design/blob/master/system-design-prep-material/architecture-diagrams/Notification%20Service%20design.png
@@ -117,7 +122,7 @@ Cassandra(Columnar DB) -
 Hbase -> Write Heavy System using transaction log - > IOT sensor System/Analytical data/Click stream
 MongoDB(documentDB)->
 BloomFilter- Used to detect user is not present using binary representation - Use bloomfilter library Rebloom
-Zooper (wriiten in java) - Used as support system(HA,Consitenct) . Locks in ZK
+Zooper (wriiten in java) - Used as support system(HA,Consitenct).Locks in ZK
 Kafka-
 Load Balancing
 CDN
@@ -219,7 +224,7 @@ INTRODUCTION TO DOCKERS & CONTAINERISATION
  INSTAGRAM:          https://medium.com/codex/design-instagram-6872b41f5c61 -> to revised news feed
  URL Shortner:       https://medium.com/codex/url-shorteners-f38e87ab821f
  AIR BNB:            https://www.codekarle.com/system-design/Airbnb-system-design.html
-
+ Notification Service
 
 Company Blogs:http://dancres.github.io/Pages/
  Software Architecture & System Design : https://medium.com/@olgamitroshyna/software-architecture-i-wish-i-had-known-about-this-earlier-4df43eae57db
@@ -314,3 +319,28 @@ Very Stable
 
 Replication mode
 consistency guranteed
+
+Change Data Capure:
+there are three primary ways to implement change data capture: Log-based, Query-based, and Trigger-based. 
+
+Log-based – Log-based CDC is one of the most efficient CDC strategies. Every new database transaction is recorded in a log file in this approach. Moving forward, the polling system can source information from the log file without incurring and resource hit on the original database.
+
+Query-based – The database is queried to pick up changes with query-based CDC. This strategy incurs more resource toll than log-based CDC as it polls the source database and requires the database to be configured to preserve metadata like a timestamp for querying.
+
+Trigger-based – With Trigger-based CDC, the source database system is configured to trigger a notification when data is written to or altered within the source database. This process relies on auditing metadata within the database, such as a timestamp or other indicators that a data entry has changed. With that said, keep in mind that database triggers do incur a more substantial performance impact on the data source. It requires multiple writes each time a database change is identified, and an accompanying trigger is initiated
+
+https://streamsets.com/blog/change-data-capture-uses/
+
+
+Replication ,replication Lag and Conflict resolution:
+
+
+a. Synchrous /Async Replication(Gossip)
+
+1. Single Leader Replication
+    2.  Read After Write - Send request to Leader for read
+3. Multi Leader Replication
+    3. 
+
+
+Read:  https://microservices.io/

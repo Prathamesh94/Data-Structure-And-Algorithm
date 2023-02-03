@@ -22,7 +22,7 @@ Situation : We were suppose to migrate 2000+ Services to nodejs from vendor prod
 
 For B2C segment we consumer didn't had any SIT environment due to which it was difficult of perform testing in SIT before promoting change to replica.
 
-Task: We decide to listdown API with their consumer and discuss with consumer to perform testing and coordinate proactively to ensure testing in done
+Task: We decided to listdown API with their consumer and discuss with consumer to perform testing and coordinate proactively to ensure testing in done
 
 Action:
 We had design walkthrough with all stake holders , We shot a mail to consumer that we will be deploying in SIT on xx date we are expecting signoff by this date.
@@ -111,9 +111,29 @@ mentorship
 best practices and systems to deliver quality deliverable
 also act SME in team to solve any design/programing/production issue.
 
+Introduction:
+Roles:
+1. Software Developer/DevOps  : 
+2. Senior Software Developers :
+3. Lead Software Engineer
 
-Strength:Responsibility,Ownership,Problem Solving,Team Player,Never giving up character,Sportsmenship,Leadership
-Weakness:Taking too many task -> Delegate work
+Scenarios:
+1. Working on business critical application like RPOS & TPA which is generating billions of revenue
+
+2. Taking end to end ownership of business critical application/flows projects.
+
+3. Team player working developers and devOps to encourage, motivate to complete the critical task in hand.
+
+4. Wearing different hats an and when required devOps engineer,product manager,Leader, solution architect closely working with Ops team for production issues
+
+5. Taking Ownership of business critical modules and high scale modules 
+Products:
+1. RPOS& tPA
+2. Jio Fibre and OTT Integrations
+3. Partner Integration Facebook/ Microsoft
+
+Strength:Responsibility,Ownership,Problem Solving,Team Player,Never giving up character,Sportsmenship,Leadership,Peoples Person
+Weakness: When Moving from Senior Developer to Lead Developer , Taking too many task -> Delegate work
 
 Situation: Jio Fiber Launch and OTT Integeration in 2-3 weeks
 
@@ -127,10 +147,15 @@ Situation:jiomart microservice scaling
 
 Situation:Migration from vendor to opensource
 
-
 Situtation XSLT transformation
 
 Situation: Low level Design of .env create muultiple .env
+
+DevOps Engineer
+Dev Manager
+Product Manager
+
+RPOS Scaling issue
 
 Tradeoff discussion:
 Docker vs kubernetes
@@ -141,3 +166,36 @@ Maintaince of .env for each env
 Situtaion: Resolved manager and team member conflict
 
 
+VALUATION
+Vesting
+Exercise Period
+Clif
+
+how to manage senior people?
+I tend to work them in humble way with every one and treat them with respect, create friendly environment, we are help each other to get best out of each other and I give them higher responsility
+
+Situation were We failed -> 
+MPOS new commerce microservice architecture production failure due to high traffic due to missing Non-Functional Requirement
+
+Design document review steps?
+
+Problem Statement
+Functional Requirement
+Use cases
+Impacted System
+Changes at each system
+API Specs
+Functional Mapping
+Archieture Diagram
+Flow Diagram
+
+What points to be considered while reviewing document?
+
+
+
+Software Developer - DevOps
+Senior Software Developer 
+Lead Engineer
+
+
+Was part of Jio Mobility journey from 0-500million customer, and Jio Fibre from 0-5 million

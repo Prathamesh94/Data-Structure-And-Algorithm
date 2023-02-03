@@ -1,0 +1,24 @@
+A> 1Lot 9:35 SELL 3*M 3*T 1*W 0T 3*F -> Done
+B> 2 Lot 9:35 SELL with retry and hedge 2*Thursday
+C> 2 Lot 9:55 ND with hedge Wednesday and Thursday -> Done
+D> 2 Lot 9:55 ND trailing with hedge only Wednesday -> Done
+	Remove trailing
+	Stoploss increase to 12000 after back test
+
+
+M      - A*3
+Tue    - A*3
+W      - A+C+D
+Thu    - C*2+B
+F      -   A*3
+
+
+Buy
+9:16 no change
+9:35 no change
+10:33 no change
+10:01 no trade on Tuesday and filter only on > High and in between high and low
+
+
+
+Try 15:10 exit 

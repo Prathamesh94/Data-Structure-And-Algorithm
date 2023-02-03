@@ -1,0 +1,29 @@
+Link:
+https://www.scaler.com/academy/mentee-dashboard/class/29485/assignment/problems/9896?navref=cl_tt_lst_nm
+
+Problem Description
+
+Given a positive integer A, the task is to count the total number of set bits in the binary representation of all the numbers from 1 to A.
+
+Return the count modulo 109 + 7.
+Solution:
+
+module.exports = { 
+ //param A : integer
+ //return an integer
+	solve : function(A){
+
+        let N = A + 1, mod = 1000*1000*1000 + 7;
+        let ans = 0, pow2 = 1;
+        for(let i = 0; i < 32; i++) {
+           // console.log(N,pow2,Math.floor(N / (pow2 << 1)),Math.max(0, N % (pow2 << 1) - pow2))
+            ans += (Math.floor(N / (pow2 << 1)) * pow2)%mod + Math.max(0, N % (pow2 << 1) - pow2);
+            ans %= mod;
+            pow2 <<= 1;
+            if(pow2 > A) break;
+        }
+        return ans;
+
+	}
+};
+

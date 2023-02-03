@@ -1,0 +1,96 @@
+Data Structure:
+1. Arrays
+2. 2-Dimensional Array(Matrix)
+3. Maintain data and index after sorting
+4. Strings
+5. LinkedList
+6. Queues
+7. Stacks
+8. Trees
+9. Heaps
+10. Tries
+11. Graph
+
+
+
+Algorithms:
+1. Kadane Algorithms
+2. PrefixSum
+3. Matrix PrefixSum= Sum of rows -> Sum of columns
+4. Sum of Sub Matrix based on Top Left and Bottom Right
+5. Sort and retain index of element in original array.
+6. Sorting and Searching
+7. Recursion
+8. BackTracking
+9. DFS
+10. BFS
+11. Dynamic Programming
+    a. Memoization
+    b. tabulation
+
+
+Problems:
+
+>Lecture-1
+1. Merge Interval
+2. Rain water trapping
+3. Max sum subarray
+
+>Lecture-2
+4. Given Q queries ,find sum of submatrix, you are given top left and bottom right
+5. Given  a  matrix find max submatrix sum   ->try with each row 0-n-1 as starting point Sum of rows from top to bottom and apply kadanes Algorithm
+
+>Lecture-3
+6. Find max j-i such that A[j]>=A[i]  -> Using sorting storing index with it and find left min to find max j-i
+7. Given a matrix of size mxn find sum of all submatrix sums?? -> Find prefix matrix sum and take sum of it
+8. Given 2D Matrix ,every row sorted every column sorted. Find element k?? -> Do Binary search to row to find row then binary search on column
+
+>Lecture-4
+9. For given decimal number N, check if ith bit is set or not? -> Perform n right shift and check if it is a set bit , ((N >> i)&1 ==1)
+10. Given a decimal number,count the number of set bits in it? -> Check bit for each bits for 32 bit number
+11. Given N array elements every element repeat twice expect one ,find unique element?  -> do xor of all numbers
+12. Given N array elements every element repeat thrice expect one ,find unique element? -> count bit at position for all number and mod it with 3 ,  then that is bit of unique number for that position
+
+>Lecture-5
+13. Given N elements, every element repeats twice expect 2 unique elements, Find 2 unique elements? where arr[i] >=0
+    Solution : 1. XOR of all elements gives XOR of two elements
+               2. Create two buckets based of elements based on set bit and non set bit at given position
+               3. Now we can solve both bucket same as question 11 to get two unique elements
+14. Given N elements, array contains all elements from 1 to n+2 except 2 elements .find 2 missing elements? ->
+15. Given N elements, calculate sum of xor of  all pairs
+16. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://scaler-co.slack.com/archives/C02AQJK3PL3/p1643120748225800?thread_ts=1643090315.221600&cid=C02AQJK3PL3
+

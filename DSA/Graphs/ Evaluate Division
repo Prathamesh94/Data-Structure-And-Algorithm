@@ -1,0 +1,58 @@
+/**
+ * You are given an array of variable pairs equations and an array of real numbers values, where equations[i] = [Ai, Bi] and values[i] represent the equation Ai / Bi = values[i]. Each Ai or Bi is a string that represents a single variable.
+
+You are also given some queries, where queries[j] = [Cj, Dj] represents the jth query where you must find the answer for Cj / Dj = ?.
+
+Return the answers to all queries. If a single answer cannot be determined, return -1.0.
+
+Note: The input is always valid. You may assume that evaluating the queries will not result in division by zero and that there is no contradiction.
+
+Link: https://leetcode.com/problems/evaluate-division/
+ * 
+ * 
+ * 
+ * 
+ * @param {string[][]} equations
+ * @param {number[]} values
+ * @param {string[][]} queries
+ * @return {number[]}
+ */
+const calcEquation = function (equations, values, queries) {
+  const graph = {};
+
+  function getResult([dividend, divisor]) {
+    if (!graph[dividend] || !graph[divisor]) return -1;
+
+    const visited = new Set([dividend]);
+
+    const q = [{ curr: dividend, res: 1 }];
+    while (q.length) {
+      const { curr, res } = q.pop();
+      if (curr === divisor) return res;
+
+      if (curr in graph) {
+        for (const [child, mult] of Object.entries(graph[curr])) {
+          if (!visited.has(child)) {
+            visited.add(child);
+            q.push({
+              curr: child,
+              res: res * mult,
+            });
+          }
+        }
+      }
+    }
+
+    return -1;
+  }
+  
+  equations.forEach(([dividend, divisor], i) => {
+    const result = values[i];
+    if (!(dividend in graph)) graph[dividend] = {};
+    graph[dividend][divisor] = result;
+    if (!(divisor in graph)) graph[divisor] = {};
+    graph[divisor][dividend] = 1 / result;
+  });
+
+  return queries.map((query) => getResult(query));
+};
